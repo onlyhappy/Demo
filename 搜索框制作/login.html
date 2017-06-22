@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>搜索框</title>
+	<style>
+     body{
+     	 background: #333;
+     }
+     html,body,div,ul,ol,li,dl,dt,dd,p,span{
+     	 padding: 0px;
+     	 margin: 0px;
+     }
+     ul{
+     	 list-style: none;
+     }
+     a{
+         text-decoration: none;
+         color:#999;
+     }
+     .nav{
+     	 width:1228px;
+     	 margin:0 auto;
+     	 height: 30px;
+     	 line-height: 30px;
+     }
+     .nav ul li{
+     	 float: left;
+     	 padding:20px;
+     }
+     .box{
+     	 position: relative;
+     	 background: url(river.jpg);
+     	 width:1228px;
+     	 height: 700px;
+     	 margin:30px auto;
+     }
+     .box .search{
+     	 position: absolute;
+     	 top: 180px;
+     	 left: 200px;
+     }
+     .search .login{
+     	 background: url(logo.png);
+     	 height: 50px;
+     	 width:105px;
+     	 float: left;
+     	 margin:-9px 10px 0 0;
+     }
+     .search .search-form{
+     	 float: left;
+     	 background: #fff;
+     	 padding:5px;
+     }
+     .search .txt{
+         height:25px;
+         line-height: 25px;
+         float: left;
+         width: 350px;
+         border: 0;
+         outline: none;
+     }
+     .btn{
+     	background-image: url(search-button.png);
+     	width:29px;
+     	height:29px;
+     	float: left;
+     	border: 0
+     }
+     .prompt{
+       /*  position: absolute;
+        top: 279px;
+        left: 375px; */
+     	width:388px;
+     	border:1px solid #999;
+     	background: #fff;
+        position: absolute;
+        margin:0;
+        padding:0;
+        border:1px solid #999;
+     }
+     .prompt ul{
+        list-style:none;
+        display:block;
+        margin:0;
+        padding:0
+     }
+     .prompt ul li {
+        padding:3px;
+        line-height:25px;
+        font-size: 14px;
+        color: #777;
+        cursor: pointer;
+        padding:5px;
+     }
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li><a href="#">图片</a></li>
+			<li><a href="#">音频</a></li>
+			<li><a href="#">视频</a></li>
+			<li><a href="#">咨询</a></li>
+			<li><a href="#">地图</a></li>
+			<li><a href="#">影响力</a></li>
+			<li><a href="#">更多</a></li>
+		</ul>
+	</div>
+	<div class="box">
+		<div class="search">
+		<div class="login"></div>
+		<form action="#" class="search-form" id="search-form">
+			<input type="text" id="txt" class="txt">
+			<input type="submit" id="btn" class="btn" value=""/>
+		</form>
+		</div>
+	</div>
+	 <div class="prompt" id="prompt" style="display:none">
+				<ul id="result">
+					<li> 搜索内容 </li>
+					<li> 搜索内容 </li>
+				</ul>
+    </div>
+ <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+     <script>
+       $('#txt').bind('keyup',function(){
+         $('#prompt').show().css({
+           top:$('#search-form').offset().top+$('#search-form').height()+10,
+           left:$('#search-form').offset().left
+         })
+         position:'absolute'
+     })
+     </script>
+</body>
+</html>
