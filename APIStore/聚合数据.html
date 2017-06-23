@@ -5,7 +5,7 @@
 	<title>身份查询</title>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/template-native.js"></script>
-     <style>
+    <style>
       table{
       	 width:500px;
       	 border:1px solid #000;
@@ -20,29 +20,29 @@
 </head>
 <body>
     <table></table>
-	<script>
-      $(function(){
-      	 $.ajax({
-      	 url:'http://apis.juhe.cn/idcard/index',
-      	 type:'get',
-      	 data:{
-      	 	cardno:'342201199603130030',
-      	 	dtype:'json',
-      	 	key:'44d1cbaa1665151ec1514e685b68a764'
-      	 },
-      	 dataType:'jsonp',
-      	 success:function(info){
-            console.log(info);
-            var html=template('tmp',info);
-            $('table').append(html);
-      	 },
-      	 err:function(err,errMsg){
-            console.log(errMsg);
-      	 }
-      })
-      })
-	</script>
-	 <script type="text/template" id="tmp">
+	  <script>
+        $(function(){
+        	 $.ajax({
+        	 url:'http://apis.juhe.cn/idcard/index',
+        	 type:'get',
+        	 data:{
+        	 	cardno:'342201199603130030',
+        	 	dtype:'json',
+        	 	key:'44d1cbaa1665151ec1514e685b68a764'
+        	 },
+        	 dataType:'jsonp',
+        	 success:function(info){
+              // console.log(info);
+              var html=template('tmp',info);
+              $('table').append(html);
+        	 },
+        	 err:function(err,errMsg){
+              console.log(errMsg);
+        	 }
+        })
+        })
+	   </script>
+	   <script type="text/template" id="tmp">
        <tr>
        <td><%= result.area%></td>
        <td><%= result.birthday%></td>

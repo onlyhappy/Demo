@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>回到顶部效果</title>
+        <style>
+          .ng{
+          	 width: 1190px;
+          	 margin: 0 auto;
+          }
+          #btn{
+          	 width: 40px;
+          	 height: 40px;
+          	 background: url(images/top_bg.png) left top no-repeat;
+          	 position:fixed;
+          	 right:30px;
+          	 bottom:40px;
+          	 display: none;
+          }
+          #btn:hover{
+          	 width:40px;
+          	 height: 40px;
+          	 background: url(images/top_bg.png) 0 -40px no-repeat;
+          }
+        </style>
+    </head>
+    <body>
+      <div class="ng">
+      	<img src="images/tb_bg.jpg" alt="">
+      </div>
+      <a href="javascript:;" id="btn"></a>
+      <script>
+           window.onload=function(){
+           	  var obtn=document.getElementById('btn');
+           	  var timer=null;
+           	  var isTop=true;
+           	  var clientHeight=document.documentElement.clientHeight;
+           	  window.onscroll=function(){
+       	  	   var oTop=document.documentElement.scrollTop||document.body.scrollTop;
+       	  	     if(oTop>=clientHeight){
+       	  	     	obtn.style.display='block';
+       	  	     }else{
+       	  	     	obtn.style.display='none';
+       	  	     }
+           	  	 if(!isTop){
+           	  	 	clearInterval(timer);
+           	  	 }
+           	  	 isTop=false;
+           	  }
+           	  obtn.onclick=function(){
+           	  	timer=setInterval(function(){
+           	      var oTop=document.documentElement.scrollTop||document.body.scrollTop;
+           	      var peed=Math.floor(-oTop/10);
+           	      document.documentElement.scrollTop=document.body.scrollTop=oTop+peed
+           	      isTop=true;
+           	      if(oTop==0){
+           	      	clearInterval(timer);
+           	      }
+           	  	},30)
+           	  }
+           }
+      </script>
+    </body>
+</html>
