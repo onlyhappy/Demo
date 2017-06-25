@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>淘宝搜索框</title>
+    </head>
+    <style>
+    body,html{
+    	 margin: 0;
+    	 padding: 0;
+    }
+    .box{
+    	 height: 50px;
+    	 height: 50px;
+    	 width: 100%;
+    	 border: 1px solid red;
+    }
+    .box-left{
+    	 width: 80px;
+    	 height: 100%;
+    	 background: red;
+    }
+    .left-top{
+         display: none;     
+    }
+    .left-bottom{
+    	 display: block;
+    }
+    .content{
+    	  
+    }
+    </style>
+    <body>
+      <div class="box">
+        <div class="box-left">
+        	<input type="button" class="left-top" value="你好？">
+        	<input type="button" class="left-bottom" value="我很好，谢谢！">
+        </div>
+        <div class="content">
+        	<input type="text" placeholder="请输入用户名？">
+        </div>
+        <div class="box-right">
+        	<input type="button" value="搜索">
+        </div>
+      </div>
+    </body>
+</html>

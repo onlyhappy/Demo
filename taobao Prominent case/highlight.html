@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>突出案例</title>
+    <style>
+      *{
+         margin:0;
+         padding:0;
+      }
+      ul{
+         list-style: none;
+      }
+      .wrap{
+         width:630px;
+         height: 395px;
+         background: #000;
+         overflow: hidden;
+         border: 1px solid #fff;
+         margin:100px auto 0; 
+         padding:10px 0 0 10px;
+      }
+      .wrap ul li{
+         float: left;
+         margin:0 10px 10px 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="javascript:;"><img src="images/01.jpg" height="186" width="200" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/02.jpg" height="186" width="200" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/03.jpg" height="186" width="200" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/04.jpg" height="186" width="200" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/05.jpg" height="186" width="200" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/06.jpg" height="186" width="200" alt=""></a></li>
+        </ul>
+    </div>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+       $(function () {
+            //获取所有的li注册鼠标进入和离开的事件
+            $(".wrap>ul>li").mouseover(function () {
+                $(this).siblings("li").css("opacity",0.5);
+                $(this).css("opacity",1);
+            });
+            $(".wrap>ul>li").mouseout(function () {
+               $(this).parent().children("li").css("opacity",1);
+            });
+        });
+    </script>    
+</body>
+</html>

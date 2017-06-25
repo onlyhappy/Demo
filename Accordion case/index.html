@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴案例</title>
+    <!-- 手风琴案例，鼠标移动上面查看详细图片，离开返回默认样式 -->
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul{
+         list-style:none;
+    }
+    .box{
+         width:1150px;
+         height: 400px;
+         margin:50px auto;
+         border:1px solid red;
+         overflow:hidden;         
+    }
+    .box ul{
+         width:1300px;
+    }
+    .box li{
+         width:240px;
+         height: 400px;
+         float: left;
+         position: relative;
+    }
+    h3{
+         width:50px;
+         height: 50px;
+         line-height: 50px;
+         position: absolute;
+         left:20px;
+         top:20px;
+         border-radius: 50%;
+         border:1px solid red;
+         text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><h3>1</h3><img src="images/1.jpg" alt=""></li>
+            <li><h3>2</h3><img src="images/2.jpg" alt=""></li>
+            <li><h3>3</h3><img src="images/3.jpg" alt=""></li>
+            <li><h3>4</h3><img src="images/4.jpg" alt=""></li>
+            <li><h3>5</h3><img src="images/5.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+      $(function () {
+            $(".box>ul>li").mouseover(function () {
+                $(this).siblings("li").css("width","100px");
+                $(this).css("width","800px");
+            });
+            $(".box>ul>li").mouseout(function () {
+                //find，调用该方法的对象中的所有的元素
+                $(this).parent().find("li").css("width","240px");
+            });
+        });
+    </script>
+</body>
+</html>

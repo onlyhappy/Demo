@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html>  
+<head lang="en">  
+    <meta charset="UTF-8">  
+    <title>手风琴案例</title>
+    <!-- 点击按钮显示对应详细图片 -->
+    <style>  
+        * {
+            padding: 0;  
+            margin: 0;  
+        }
+        div {
+            width: 520px;  
+            height: 222px;  
+            margin: 50px auto;  
+            border: 1px solid red;  
+        }  
+        ul {
+        	list-style:none;
+            height: 222px;  
+        }  
+        li {  
+            float: left;  
+            height: 222px;  
+            list-style: none;  
+        }  
+        h3 {  
+            width: 50px;  
+            float: left;  
+            height: 222px;  
+            border: 1px solid green;  
+            box-sizing: border-box;  
+        }  
+        img {  
+            width: 0px;
+            height: 100%;
+            float: left;
+        }
+        .img {  
+            width: 220px;             
+        }  
+    </style>  
+</head>  
+<body>  
+<div>  
+    <ul>  
+        <li><h3>1</h3><img src="images/1.jpg" alt=""/></li>  
+        <li><h3>2</h3><img src="images/2.jpg" alt=""/></li>  
+        <li><h3>3</h3><img src="images/3.jpg" alt=""/></li>  
+        <li><h3>4</h3><img src="images/4.jpg" alt=""/></li>  
+        <li><h3>5</h3><img src="images/1.jpg" alt=""/></li>  
+        <li><h3>6</h3><img class="img" src="images/2.jpg" alt=""/></li>  
+    </ul>  
+</div>  
+  
+<script>  
+    var lis = document.querySelectorAll("li");  
+    var imgs = document.querySelectorAll("img");  
+    for(var i = 0; i < lis.length; i++) {  
+            //给所有的li标签添加点击事件
+        lis[i].onclick = function () {
+            //将所有的图片宽度设置为0  
+            for(var j = 0; j < lis.length; j++) {  
+                imgs[j].style.width = "0px";  
+            }  
+            //将当前点击li标签中的img标签设置宽度为220px  
+            this.querySelector("img").style.width = "220px";  
+        }  
+    }  
+</script>
+</body>  
+</html>  
