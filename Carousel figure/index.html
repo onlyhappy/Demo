@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>轮播图</title>
+      <!-- 轮播图效果，自动轮播，点击左右按钮切换图片，点击对应索引移动当前对应图片 -->
+      <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      ul{
+         list-style: none;
+      }
+      .box{
+        width: 800px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        margin: 50px auto;
+      }
+      .imgpic{
+        width: 9999px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .imgpic li{
+        float: left;
+      }
+      .btn{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -150px;
+      }
+      .btn li{
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        float: left;
+        line-height: 50px;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 0 5px;}
+      .left,.right{
+        text-decoration:none;
+        width: 50px;
+        height: 80px;
+        background: rgba(0,0,0,0.3);
+        line-height: 80px;
+        text-align: center;
+        color: #fff;
+        font-size: 40px;
+        position: absolute;
+        top: 50%;
+        margin-top: -40px;
+      }
+      .left{
+        left: 0;
+      }
+      .right{
+        right: 0;
+      }
+      .left:hover,.right:hover{
+        background: rgba(0,0,0,0.5);
+      }
+      .btn .first{
+        background: rgba(125,125,125,0.5);
+      }
+        </style>
+    </head>
+    <body>
+      <div class="box">
+      	<ul class="imgpic">
+      		<li><img src="img/1.jpg" width="800" height="600px" alt=""></li>
+      		<li><img src="img/2.jpg" width="800" height="600px" alt=""></li>
+      		<li><img src="img/3.jpg" width="800" height="600px" alt=""></li>
+      		<li><img src="img/4.jpg" width="800" height="600px" alt=""></li>
+      		<li><img src="img/5.jpg" width="800" height="600px" alt=""></li>
+      	</ul>
+      	<ul class="btn">
+      		<li class="first">1</li>
+      		<li>2</li>
+      		<li>3</li>
+      		<li>4</li>
+      		<li>5</li>
+      	</ul>
+      	<a href="###" class="left"><</a>
+	      <a href="###" class="right">></a>
+      </div>
+      <script src="js/jquery-1.11.3.js"></script>
+      <script>
+     (function($){
+        var imgWidth=$('.box').width();
+        var imgLen=$('.btn li').length;
+        var index=0;
+        var timer=null;
+        
+        //事件触发公有方法
+        function scrollimg(){
+          $('.btn li').removeClass('first').eq(index).addClass('first');
+          $('.imgpic').stop(true,false).animate({left:-imgWidth*index});
+        } 
+        //移入按钮清除定时器，移出开启
+        $('.left,.right').hover(function(){
+          clearInterval(timer);
+        },function(){
+          onSetinterval();      
+        });
+        //左右按钮切换
+        $('.left').click(function(){
+          index++;
+          if (index>4) {
+            index=0;
+          }
+          scrollimg();
+        });
+        $('.right').click(function(){
+          index--;
+          if (index<0) {
+            index=4;
+          }
+          scrollimg();
+        });
+        
+        //底部圆点切换，移入清除定时器，移除启动
+        $('.btn li').mouseover(function(){
+          clearInterval(timer);
+          index=$(this).index();
+          scrollimg();
+        }).mouseout(function(){
+          onSetinterval();
+        });
+        
+        //没有触发时执行定时器
+        function onSetinterval(){
+          timer=setInterval(function(){
+            index++;
+            if (index==imgLen) {
+              index=0;
+            }
+            scrollimg();
+          },2000);      
+        }   
+        onSetinterval();
+      })(jQuery);
+      </script>
+    </body> 
+</html>
