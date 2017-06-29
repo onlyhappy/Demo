@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五角星</title>
+    <!-- 模仿淘宝评价五角星，悬浮获得几星，后续推出点击选取几星 -->
+    <style>
+      span{
+          font-size:32px;
+      }
+    </style>
+</head>
+<body>
+    <div>
+       <span>☆</span>
+       <span>☆</span>
+       <span>☆</span>
+       <span>☆</span>
+       <span>☆</span>
+    </div>
+    <script>
+      window.onload=function(){
+         var isFloat;
+         var sp=document.getElementsByTagName('span');
+         for(var i=0;i<sp.length;i++){
+             // 鼠标进入
+             sp[i].onmouseover=function(){
+                if(isFloat) return;
+             for(var j=0;j<sp.length;j++){
+                 sp[j].innerHTML="★";
+                 if(sp[j]===this){
+                    break;
+                 }
+               }
+             };
+             // 鼠标离开
+           sp[i].onmouseout=function(){
+               if(isFloat) return;
+               for(var j=0;j<sp.length;j++){
+                 sp[j].innerHTML='☆';
+               }
+             };
+           }
+         }
+         
+    </script>
+</body>
+</html>
