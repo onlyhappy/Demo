@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开关灯</title>
+    <!-- 点击开关灯效果 -->
+    <style>
+        .on{
+            background-color: white;
+        }
+        .off{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="关灯" id="btn"/>
+<script>
+        var btn=document.getElementById('btn')
+         btn.onclick=function () {
+        //获取body,document.body
+        if(document.body.className=="off"){
+            document.body.className="on";
+            this.value="关灯";
+        }else{
+            document.body.className="off";
+            this.value="开灯";
+        }
+    };
+</script>
+</body>
+</html>

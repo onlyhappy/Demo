@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>全选/全不选/反选</title>
+        <!-- 全选/全不选功能，更好的方便操作 -->
+        <style>
+           .box{
+           	  width:300px;
+           	  margin:0 auto;
+           }
+           .box .top{
+              float: top;
+           }
+           .box .dv{
+           	  float: bottom;
+           }
+        </style>
+    </head>
+    <body>
+       <div class="box">
+        <div class="top">
+        <p>全选<input type="button" id="All" value="全选" /><br /></p>
+		<p>不选<input type="button" id="uncheck" value="不选" /><br /></p>
+		<p>反选<input type="button" id="othercheck" value="反选" /><br /></p>
+		</div>
+		<div id="dv">
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		    <input type="checkbox" />    糖焖莲子<br />
+		</div>
+	</div>
+      <script>
+		window.onload=function(){
+		    var CheckAll=document.getElementById('All');
+		    var UnCheck=document.getElementById('uncheck');
+		    var OtherCheck=document.getElementById('othercheck');
+		    var dv=document.getElementById('dv');
+		    var    CheckBox=dv.getElementsByTagName('input');
+		    CheckAll.onclick=function(){
+		            for(i=0;i<CheckBox.length;i++){
+		                    CheckBox[i].checked=true;
+		                };
+		        };
+		    UnCheck.onclick=function(){
+		            for(i=0;i<CheckBox.length;i++){
+		                    CheckBox[i].checked=false;
+		                };
+		        };
+		    othercheck.onclick=function(){
+		            for(i=0;i<CheckBox.length;i++){
+		                    if(CheckBox[i].checked==true){
+		                            CheckBox[i].checked=false;
+		                        }
+		                    else{
+		                        CheckBox[i].checked=true
+		                        }
+		                    
+		                };
+		        };
+		};
+		</script>
+    </body>
+</html>

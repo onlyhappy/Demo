@@ -7,11 +7,11 @@
      $http.get('./data.json')
       .then(function(res){
          $scope.todos=res.data
-     })
+     }) 
      /* 2.把获取的数据添加到魔板中 */
      $scope.newTodos=''
      $scope.add=function(){
-        /* 判断，如果$scope.newTodos时空字符串，不允许添加 */
+      /* 判断，如果$scope.newTodos时空字符串，不允许添加 */
        if(!$scope.newTodos){
          alert('不能为空，不能偷懒哦！')
          return
@@ -29,7 +29,7 @@
    
        /* 失去焦点时，隐藏编辑框！ */
        $scope.hideInput = function () {
-               $scope.xxx = '-1'
+              $scope.xxx = '-1'
        }
 
         /* 4.删除数据 */
@@ -54,7 +54,7 @@
           return $scope.count
        }
        /* 6.切换显示不同状态的任务 */
-           $scope.search = {}
+            $scope.search = {}
         $scope.active = function () {
             $scope.search = {completed:false}
         }
@@ -65,7 +65,7 @@
             $scope.search = {}
         }
         $scope.all = function(){
-             
+            $scope.search={completed:true}
     }
         /* 7.清除已完成的任务 */
     $scope.clearComplted = function () {
