@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关机动画</title>
+    <!-- 关闭小广告，动画效果 -->
+    <style>
+        .box {
+            width: 322px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <span id="oBtn"></span>
+    <div class="hd" id="dv1">
+        <img src="images/t.jpg" alt=""/>
+    </div>
+    <div class="bd" id="dv2">
+        <img src="images/b.jpg" alt=""/>
+    </div>
+</div>
+<script src="common.js"></script>
+<script>
+    //为按钮注册点击事件
+    my$("oBtn").onclick=function () {
+        animate(my$("dv2"),{"height":0},function () {
+            animate(my$("box"),{"width":0});
+        });
+    };
+</script>
+</body>
+</html>
