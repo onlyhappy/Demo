@@ -13,4 +13,7 @@
 ### July 3, 2017 [Simple tab](https://github.com/onlyhappy/Demo/blob/master/Simple%20tab.html)
 ### July 4, 2017 [Simple calendar](https://github.com/onlyhappy/Demo/blob/master/Simple%20calendar.html)
 ### July 5, 2017 [Value changing color](https://github.com/onlyhappy/Demo/blob/master/Value%20changing%20color.html)
-### July 6, 2017 Shutdown animation
+### July 6, 2017 [Shutdown animation](https://github.com/onlyhappy/Demo/tree/master/Shutdown%20animation)
+### July 7, 2017 Slow zoom
+### July 8, 2017 Load scroll bar 
+### July 9, 2017 scroll bar

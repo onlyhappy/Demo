@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>加载效果滚动条</title>
+        <!-- 进入页面，加载滚动条动画效果 -->
+        <style>
+          *{
+          	margin:0;
+          	padding:0;
+          }
+          #box{
+          	position: absolute;
+          	top:100px;
+          	width:100%;
+          	height:10px;
+          	background:#000;
+          }
+          #main{
+          	display: block;
+            background:red;
+            height: 10px;
+            box-shadow:0px 0px 10px 1px #ff2525;
+          }
+          #btn{
+          	margin:120px auto;
+          	width: 100px;
+          	height: 50px;
+          	background:red;
+          }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+        	<span id="main"></span>
+        	<button id="btn">点击按钮</button>
+        </div>
+        <script>
+			//创建滚动条对象
+			var slide = document.getElementById('main');
+			var timer = null;
+			var box = document.getElementById('box').offsetWidth;
+			//自动执行的方法
+			(function () {
+				init();
+				start();
+				// stop();
+			})();
+			//点击按钮执行滚动条
+			var btn=document.getElementById('btn');
+			btn.onclick=function(){
+				init();
+				start();
+			}
+			//初始起点值
+			function init () {
+				slide.style.width = "0px";
+				slide.speed = 10;
+			}
+            //运动
+			function start () {
+				if (slide.offsetWidth >= box) {
+					return;
+				};
+				slide.style.width = slide.offsetWidth + slide.speed + 'px';
+				timer = setTimeout("start()",10);
+			}
+            //停止执行
+			function stop () {
+				clearTimeout(timer);
+			}
+        </script>
+    </body>
+</html>

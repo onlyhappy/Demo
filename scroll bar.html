@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>滚动新闻栏</title>
+        <!-- 空白处滑动鼠标，滚动新闻消息内容 -->
+        <style>
+          *{
+          	padding:0;
+          	margin:0;
+          	list-style:none;
+          	text-decoration:none;
+          }
+          .box{
+          	 width:300px;
+          	 height: 300px;
+          	 margin:50px auto;
+          	 overflow:hidden;
+          }
+          .box-ul{
+          	 width:300px;
+          }
+          .box-ul li{
+          	 width:300px;
+          	 height: 30px;
+          	 line-height:30px;
+          	 border-bottom:hidden;
+             display:inline-block;
+          }
+          .box-ul li a{
+          	 color:#695554;
+          }
+          .box-ul li a:hover{
+          	 color:red;
+          }
+        </style>
+    </head>
+    <body>
+      <div class='box'>	
+         <ul class='box-ul' id='box-ul'>
+         	<li><a href="#">一一一一一一一一一一一一</a></li>
+         	<li><a href="#">二二二二二二二二二二二二</a></li>
+         	<li><a href="#">三三三三三三三三三三三三</a></li>
+         	<li><a href="#">四四四四四四四四四四四四</a></li>
+         	<li><a href="#">五五五五五五五五五五五五</a></li>
+         	<li><a href="#">六六六六六六六六六六六六</a></li>
+         	<li><a href="#">七七七七七七七七七七七七</a></li>
+         	<li><a href="#">八八八八八八八八八八八八</a></li>
+         	<li><a href="#">九九九九九九九九九九九九</a></li>
+         	<li><a href="#">111111111111111111111111</a></li>
+         	<li><a href="#">222222222222222222222222</a></li>
+         	<li><a href="#">333333333333333333333333</a></li>
+         	<li><a href="#">444444444444444444444444</a></li>
+         	<li><a href="#">555555555555555555555555</a></li>
+         </ul>
+      </div>
+      <script>
+        window.onload=function(){
+        	var oScroll=document.getElementById('box-ul');
+        	var oLi=oScroll.getElementsByTagName('li');
+        	var timer=0;
+        	function scroll(){
+        		var n=oLi[0];
+        		oScroll.appendChild(n);
+        	}
+        	timer=setInterval(scroll,1500);
+        	for(var i=0;i<oLi.length;i++){
+        		oLi[i].onmouseover=function(){
+        			clearInterval(timer);
+        			timer=null;
+        		}
+        		oLi[i].onmouseout=function(){
+        			timer=setInterval(scroll,1500)
+        		}
+        	}
+        	for(var i=0;i<oLi.length;i++){
+        		if(i%2==0){
+        			oLi[i].style.background="pink"
+        		}else{
+        			oLi[i].style.background="yellow"
+        		}
+        	}
+        }
+      </script>
+    </body>
+</html>
