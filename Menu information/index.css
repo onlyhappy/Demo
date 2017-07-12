@@ -1,0 +1,88 @@
+a{
+     text-decoration: none;
+}
+.centent .f1{
+    position: absolute;
+    top:40px;
+    left:0;
+    right:0;
+}
+.f1 h2{
+    font-size:40px;
+    padding:5px 10px 0;
+    text-align:center;
+
+}
+.f1 p{
+    text-align:center;
+    padding:5px 10px 0;
+    font-size: 27px;
+}
+.nav{
+    width:1000px;
+    height: 100px;
+    line-height: 100px;
+    border:1px solid red;
+    border-radius:5px;
+    position: absolute;
+    top:250px;
+    left:50%;
+    margin-left: -500px;
+    padding: 28px 24px 0;
+}
+.nav a{
+    float: left;
+    width: 128px;
+    height: 92px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    margin: 0 19px;
+}
+.nav a i{
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    transition: .1s all linear;
+}
+.nav a:hover{
+    transform: translateY(-5px);
+}
+.nav a span{
+    display: block;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #93999f;
+    line-height: 14px;
+    transition: .3s all linear;
+}
+.nav a.current{
+    border-bottom: 1px solid red;
+}
+.nav a .n1{
+    background: url('nav.png') 0px 69px;
+    background-size: cover;
+}
+.nav a .n2 {
+    background: url('nav.png') -33px 69px;
+    background-size: cover;
+}
+.nav a .n3 {
+    background: url('nav.png') -70px 69px;
+    background-size: cover;
+}
+.nav a .n4 {
+    background: url('nav.png') -106px 69px;
+    background-size: cover;
+}
+.nav a .n5 {
+    background: url('nav.png') -141px 69px;
+    background-size: cover;
+}
+.nav a .n6 {
+    background: url('nav.png') -177px 69px;
+    background-size: cover;
+}

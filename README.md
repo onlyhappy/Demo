@@ -17,4 +17,6 @@
 ### July 7, 2017 [Slow zoom](https://github.com/onlyhappy/Demo/blob/master/Slow%20zoom.html)
 ### July 8, 2017 [Load scroll bar](https://github.com/onlyhappy/Demo/blob/master/Load%20scroll%20bar.html)
 ### July 9, 2017 [scroll bar](https://github.com/onlyhappy/Demo/blob/master/scroll%20bar.html)
-### July 10, 2017 Web positioning navigation effects
+### July 10, 2017 [Web positioning navigation effects](https://github.com/onlyhappy/Demo/tree/master/Web%20positioning%20navigation%20effects)
+### July 11, 2017 Menu information
+### July 12, 2017 Clean Calculator Beta

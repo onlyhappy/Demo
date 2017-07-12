@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿慕课网点击切换内容</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div id="centent" class="centent">
+        <div class="f1">
+            <h2>迈向编程之路 成就职业梦想</h2>
+            <p>第一楼</p>
+        </div>
+        <div class="f1" style="display:none;">
+            <h2>WEB前端工程师</h2>
+            <p>第二楼</p>
+        </div>
+        <div class="f1" style="display: none;">
+            <h2>PHP工程师</h2>
+            <p>第三楼</p>
+        </div>
+        <div class="f1" style="display:none;">
+            <h2>Java工程师</h2>
+            <p>第四楼</p>
+        </div>
+        <div class="f1" style="display: none;">
+            <h2>Android工程师</h2>
+            <p>第五楼</p>
+        </div>
+        <div class="f1" style="display: none;">
+            <h2>IOS工程师</h2>
+            <p>第六楼</p>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <a href="#"><i class="n1"></i><span>全部职业路径</span></a>
+        <a href="#"><i class="n2"></i><span>WEB前端工程师</span></a>
+        <a href="#"><i class="n3"></i><span>PHP工程师</span></a>
+        <a href="#"><i class="n4"></i><span>Java工程师</span></a>
+        <a href="#"><i class="n5"></i><span>Andeoid工程师</span></a>
+        <a href="#"><i class="n6"></i><span>IOS工程师</span></a>
+    </div>
+    <script>
+        window.onload=function(){
+            var oLi=document.getElementById('nav').getElementsByTagName('a');
+            var oUl=document.getElementById('centent').getElementsByTagName('div');
+            for(var i=0;i<oLi.length;i++){
+                oLi[i].index=i;
+                oLi[i].onmouseover=function(){
+                    for(var i=0;i<oLi.length;i++){
+                        oLi[i].className='';
+                    }
+                    this.className='current';
+                    for(var j=0;j<oUl.length;j++){
+                        oUl[j].style.display='none';
+                    }
+                    oUl[this.index].style.display="block"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

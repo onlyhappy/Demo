@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单计算器和创小方块</title>
+    <!-- 运用if语句，做简单计算器，运用for创建100个小方块，添加颜色 -->
+    <script>
+        window.onload=function(){
+            var txt1=document.getElementById('txt1');
+            var txt2=document.getElementById('txt2');
+            var btn=document.getElementById('btn');
+            btn.onclick=function(){
+                var a=parseInt(txt1.value);
+                var b=parseInt(txt2.value);
+                var oSel=document.getElementById('sel').value
+                if(oSel=='+'){
+                    alert(a+b);
+                }else if(oSel=='-'){
+                    alert(a-b);
+                }else if(oSel=='*'){
+                    alert(a*b);
+                }else if(a/b){
+                    alert(a/b);
+                }
+            }
+        }
+        /*创建表格，添加颜色*/
+        var aa=['red','yellow','green','pink'];
+        for(var i=1;i<=10;i++){
+            for(var j=1;j<=10;j++){
+                document.write("<div style='height:40px;width:40px;background:"+aa[((i-1)*10+j-1)%4]+";position:absolute;top:"+i*50+"px;left:"+j*50+"px'>"+((i-1)*10+j)+"</div>")
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="txt1"/>
+<select id="sel">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</selcect>
+<input type="text" id="txt2"/>
+<button id="btn" value="计算">计算</button>
+</body>
+</html>

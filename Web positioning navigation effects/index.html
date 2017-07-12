@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>网页定位导航效果</title>
-    <!-- 点击楼层移动到对应位置，滑动屏幕对应按钮移动 -->
     <style>
         * {
             margin: 0;
@@ -99,6 +98,17 @@
                 }
 
             });
+            var $root = $('html, body');         
+            $('a').click(function() {                
+                var href = $.attr(this, 'href');
+                $root.animate({
+                    scrollTop: $(href).offset().top
+                }, 500, function () {
+                    window.location.hash = href;
+                });
+                return false;  
+            });
+
         });
     </script>
 </head>
