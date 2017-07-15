@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json新闻特效</title>
+    <!-- 动态获取数据，添加到页面 -->
+    <style>
+      a{
+          text-decoration:none;
+          padding:0 20px;
+          color:#000;
+      }
+        dl{
+            width: 800px;
+            margin:0 auto;
+        }
+
+    </style>
+    <script>
+        window.onload=function() {
+            var data = [
+                {
+                    'txt': '百度',
+                    'href': 'http://www.baidu.com',
+                    's-txt': [
+                        {
+                            'txt': '百度新闻',
+                            'href': 'http://news.baidu.com/'
+                        },
+                        {
+                            'txt': '百度翻译',
+                            'href': 'http://fanyi.baidu.com/?aldtype=16047#auto/zh'
+                        }
+                    ]
+                },
+                {
+                    'txt': '搜狐',
+                    'href': 'http://www.sohu.com',
+                    's-txt': [
+                        {
+                            'txt': '搜狐新闻',
+                            'href': 'http://news.sohu.com/'
+                        }, {
+                            'txt': '搜狐视频',
+                            'href': 'http://tv.sohu.com/'
+                        }
+                    ]
+                }
+            ]
+            var oDl = document.getElementById('list');
+            for (var i = 0; i < data.length; i++) {
+                var js = data[i];
+                var oDt = document.createElement('dt');
+                oDt.innerHTML = '<a href="'+js.href+'">' + js.txt + '</a>';
+                var oDd = document.createElement('dd');
+                for (var j = 0; j < js['s-txt'].length; j++) {
+                    var js2 = js['s-txt'][j];
+                    var oA = document.createElement('a');
+                    oA.href = js2.href;
+                    oA.innerHTML = js2.txt;
+                    oDd.appendChild(oA);
+                }
+                oDl.appendChild(oDt);
+                oDl.appendChild(oDd);
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl id="list"></dl>
+</body>
+</html>
