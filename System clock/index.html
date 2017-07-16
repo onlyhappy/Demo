@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+    <title>系统时钟</title>
+    <!-- 根据系统时间，动态显示时间-->
+    <style>
+        #clock {
+            width: 600px;
+            height: 600px;
+            background:url("img/clock.jpg") no-repeat;
+            margin: 0 auto; 
+            position: relative;
+        }
+        #clock>div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        #hour {
+            background: url("img/hour.png") no-repeat center;
+        }
+        #min {
+            background: url("img/minute.png") no-repeat center;
+        }
+        #sec {
+            background: url("img/second.png") no-repeat center;
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <div id="hour"></div>
+    <div id="min"></div>
+    <div id="sec"></div>
+</div>
+</body>
+<script>
+    function setTime() {
+        // 想要玩页面元素  先获取页面元素
+        var oH = document.getElementById("hour");
+        var oM = document.getElementById("min");
+        var oS = document.getElementById("sec");
+        var mydate = new Date();
+        var hh = mydate.getHours();
+        var mm = mydate.getMinutes();
+        var ss = mydate.getSeconds();
+        var ms = mydate.getMilliseconds();
+        ss = ss + ms / 1000;
+        oS.style.transform = "rotate(" + ss * 6 + "deg)";
+        mm = mm + ss / 60;
+        oM.style.transform = "rotate(" + mm * 6 + "deg)";
+        hh = hh + mm / 60;
+        oH.style.transform = "rotate(" + hh * 30 + "deg)";
+    }
+    setTime();
+    setInterval(setTime,1000);
+</script>
+</html>
