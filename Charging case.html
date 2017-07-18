@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>充电案例</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #main {
+            width: 0px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        #span {
+            position: absolute;
+            top: 0px;
+            right: -45px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="main"></div>
+    <span id="span">0%</span>
+    <button id="btn">按钮</button>
+    <script>
+        var oMain = document.getElementById('main');
+        var oSpan = document.getElementById('span');
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function () {
+            var i = 0;
+            var time = setInterval(function () {
+                i++;
+                if (i < 60) {
+                    oMain.style.background = "red";
+                } else if (i < 150) {
+                    oMain.style.background = "yellow";
+                } else {
+                    oMain.style.background = "green";
+                }
+                oMain.style.width = i + 'px';
+                oSpan.innerHTML = Math.round(i / 2) + '%';
+                if (i >= 200) {
+                    clearInterval(time);
+                    alert('充电完成');
+                }
+            }, 100)
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -21,6 +21,8 @@
 ### July 11, 2017 [Menu information](https://github.com/onlyhappy/Demo/tree/master/Menu%20information)
 ### July 12, 2017 [Clean Calculator Beta](https://github.com/onlyhappy/Demo/blob/master/Clean%20Calculator%20Beta.html)
 ### July 13, 2017 [Call effect](https://github.com/onlyhappy/Demo/blob/master/Call%20effect.html)
-### July 14, 2017 [Text clock]()https://github.com/onlyhappy/Demo/blob/master/Text%20clock.html
+### July 14, 2017 [Text clock](https://github.com/onlyhappy/Demo/blob/master/Text%20clock.html)
 ### July 15, 2017 [json News link effect](https://github.com/onlyhappy/Demo/blob/master/json%20News%20link%20effect.html)
-### July 16, 2017 System clock
+### July 16, 2017 [System clock](https://github.com/onlyhappy/Demo/tree/master/System%20clock)
+### July 17, 2017 Charging case
+### July 18, 2017 timer

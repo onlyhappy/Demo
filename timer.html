@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时器</title>
+                    <!--计时器待优化-->
+</head>
+<body>
+<ul>
+    <li><input value="-" type="button"/> <span>0</span> <input value="+" type="button"/>单价12.5元 小计：<i>0</i></li>
+    <li><input value="-" type="button"/> <span>0</span> <input value="+" type="button"/>单价10.5元 小计：<i>0</i></li>
+    <li><input value="-" type="button"/> <span>0</span> <input value="+" type="button"/>单价8元 小计：<i>0</i></li>
+</ul>
+<p>商品合计 <em></em></p>
+<script>
+    var oPt = document.getElementsByTagName('input');
+    var oSp = document.getElementsByTagName('span');
+    var oDiv = document.getElementsByTagName('oDiv');
+    var oI = document.getElementsByTagName('i')
+    var oEm = document.getElementsByTagName('em')
+    var i = 0;
+    var j = 0;
+    var s = 0;
+    var aa = 0;
+    var k = 0;
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    var d = 0;
+    var aa = [12.5, 10.5, 8];
+    oPt[1].onclick = function () {
+        j++;
+        var a = j;
+        var b = aa[0] * j
+        oSp[0].innerHTML = a
+        oI[0].innerHTML = b;
+        var c = a + b;
+        oEm[0].innerHTML = c;
+    }
+    oPt[0].onclick = function () {
+        j--;
+        if (j <= 0) {
+            j = 0;
+        }
+        var a = j;
+        var b = aa[0] * j
+        oSp[0].innerHTML = a
+        oI[0].innerHTML = b;
+        var c = a + b;
+        oEm[0].innerHTML = c;
+    }
+
+    oPt[3].onclick = function () {
+        i++;
+        var a = i;
+        var b = aa[1] * i;
+        oSp[1].innerHTML = a
+        oI[1].innerHTML = b;
+        var c = a + b;
+        oEm[0].innerHTML = c;
+
+    }
+    oPt[2].onclick = function () {
+        i--;
+        if (i <= 0) {
+            i = 0;
+        }
+        var a = i;
+        var b = aa[1] * i;
+        oSp[1].innerHTML = a
+        oI[1].innerHTML = b;
+        var c = a + b;
+        oEm[0].innerHTML = c;
+    }
+    oPt[5].onclick = function () {
+        i++;
+        var a = i;
+        var b = aa[2] * i;
+        oSp[2].innerHTML = a
+        oI[2].innerHTML = b;
+        var c = a + b;
+        oEm[0].innerHTML = c;
+
+    }
+    oPt[4].onclick = function () {
+        i--;
+        if (i <= 0) {
+            i = 0;
+        }
+        var a = i;
+        var b = aa[2] * i;
+        oSp[2].innerHTML = a
+        oI[2].innerHTML = b;
+        var c = a + b;
+        oEm[0].innerHTML = c;
+    }
+
+</script>
+</body>
+</html>
