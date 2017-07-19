@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>美女画廊</title>
+    <style>
+        * {
+            color: #333;
+            list-style: none;
+            background-color: #ccc;
+        }
+        li {
+            float: left;
+            padding: 10px;
+            list-style: none;
+        }
+        #ull li {
+            margin: 0px 20px 20px 0px;
+            padding: 0px;
+            display: inline;
+        }
+        #ull li a img {
+            border: 0;
+        }
+        div{
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    美女画廊
+</h2>
+<ul id="ull">
+    <li>
+        <a href="imgs/1.jpg" title="美女A">
+            <img src="imgs/1-small.jpg" width="100" alt="美女1">
+        </a>
+    </li>
+    <li>
+        <a href="imgs/2.jpg" title="美女B">
+            <img src="imgs/2-small.jpg" width="100" alt="美女2">
+        </a>
+    </li>
+    <li>
+        <a href="imgs/3.jpg" title="美女C">
+            <img src="imgs/3-small.jpg" width="100" alt="美女3">
+        </a>
+    </li>
+    <li>
+        <a href="imgs/4.jpg" title="美女D">
+            <img src="imgs/4-small.jpg" width="100" alt="美女4">
+        </a>
+    </li>
+</ul>
+
+<div style="clear:both"></div>
+<img id="imgs" src="imgs/placeholder.png" width="450px">
+<script>
+    var oImg=document.getElementById('imgs');
+    var oA=document.getElementsByTagName('a');
+    var oDiv=document.getElementsByTagName('div')[0];
+    for(var i=0;i<oA.length;i++){
+        oA[i].onclick=function(){
+            oImg.src=this.href;
+             oDiv.innerHTML=this.title
+            return false;
+
+        }
+
+    }
+</script>
+</body>
+</html>

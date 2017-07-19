@@ -23,6 +23,7 @@
 ### July 13, 2017 [Call effect](https://github.com/onlyhappy/Demo/blob/master/Call%20effect.html)
 ### July 14, 2017 [Text clock](https://github.com/onlyhappy/Demo/blob/master/Text%20clock.html)
 ### July 15, 2017 [json News link effect](https://github.com/onlyhappy/Demo/blob/master/json%20News%20link%20effect.html)
-### July 16, 2017 [System clock](https://github.com/onlyhappy/Demo/tree/master/System%20clock)
-### July 17, 2017 Charging case
-### July 18, 2017 timer
+### July 16, 2017 [System clock](https:/Gallery/github.com/onlyhappy/Demo/tree/master/System%20clock)
+### July 17, 2017 [Charging case](https://github.com/onlyhappy/Demo/blob/master/Charging%20case.html)
+### July 18, 2017 [timer](https://github.com/onlyhappy/Demo/blob/master/timer.html)
+### July 19, 2017 Beauty 
