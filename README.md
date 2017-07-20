@@ -26,4 +26,5 @@
 ### July 16, 2017 [System clock](https:/Gallery/github.com/onlyhappy/Demo/tree/master/System%20clock)
 ### July 17, 2017 [Charging case](https://github.com/onlyhappy/Demo/blob/master/Charging%20case.html)
 ### July 18, 2017 [timer](https://github.com/onlyhappy/Demo/blob/master/timer.html)
-### July 19, 2017 Beauty 
+### July 19, 2017 Beauty Gallery
+### July 20, 2017 Wipe out the pictures

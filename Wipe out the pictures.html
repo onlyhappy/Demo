@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>擦出图片</title>
+    <!--分析思路 首先创建一百个小方块添加到页面上，显示方块（图片）进行切割，隐藏图片，悬停事件动画擦出-->
+    <!-- 实现功能 鼠标滑过显示小块图片，-->
+    <style>
+        .lei {
+            width: 125px;
+            height: 77px;
+            position: absolute;
+            background: url("1.jpg") no-repeat 0 0;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        p {
+            width: 30px;
+            height: 300px;
+            border: 1px solid red;
+            background: greenyellow;
+            font-size: 30px;
+            position: fixed;
+            right: 0;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var str = '';
+    //  创建小方块
+    for (var i = 0; i < 100; i++) {
+        var l = (i % 10) * 128;
+        var t = parseInt(i / 10) * 80;
+        str += '<div class="lei" style="left:' + l + 'px;top:' + t + 'px;background-position:-' + l + 'px -' + t + 'px;"></div>' + '<p>滑动有惊喜哦</p>'
+    }
+    document.body.innerHTML = str;
+    //滑动显示
+    var oDiv = document.getElementsByTagName('div');
+    for (var i = 0; i < oDiv.length; i++) {
+        oDiv[i].onmouseover = function () {
+            this.style.opacity = 1;
+        }
+    }
+</script>
+</body>
+</html>
