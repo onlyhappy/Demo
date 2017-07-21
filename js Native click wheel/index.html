@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>lunbo</title>
+    <style>
+      #box{
+          width:600px;
+          height: 400px;
+          position: relative;
+      }
+      #img{
+          width:600px;
+          height: 400px;
+      }
+      #sp{
+          padding-left: 250px;
+          font-size:26px;
+      }
+      #pp{
+          position: absolute;
+          left: 250px;
+          top:10px;
+          font-size: 28px;
+      }
+    </style>
+</head>
+<body>
+<input type="button" value="点击向左" id="left"/>
+<input type="button" value="点击向右" id="right"/>
+<div id="box">
+    <img id="img" src="imgs/1.jpg" alt=""/>
+    <span id='sp'>1/5</span>
+    <p id='pp'>文字一</p>
+</div>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    var l=$('left');
+    var r=$('right');
+    var img=$('img');
+    var sp=$('sp');
+    var pp=$('pp');
+    var onOff=true;
+    var wenzi = ["文字一","文字二","文字三","文字四","文字五"];
+    var n=0;len=4;
+    l.onclick=function(){
+        n--;
+        if(onOff){
+            if(n<0){
+               n=len-1;
+            }
+        }else{
+            if(n<0){
+                n=0;
+            }
+        }
+        img.src='imgs/'+(n+1)+'.jpg';
+        sp.innerHTML = n+1 + " / " + 4;
+        pp.innerHTML = wenzi[n];
+    }
+    function lunbo(){
+        n++;
+        if(onOff){
+            if( n > len - 1 ){
+                n = 0;
+            }
+        }else{
+            if( n > len - 1 ){
+                n =len-1;
+            }
+        }
+        img.src='imgs/'+(n+1)+'.jpg';
+        sp.innerHTML = n+1 + " / " + 4;
+        pp.innerHTML = wenzi[n];
+    }
+    var time=setInterval({
+    },1000)
+
+    r.onclick=function(){
+        n++;
+        if(onOff){
+            if( n > len - 1 ){
+                n = 0;
+            }
+        }else{
+            if( n > len - 1 ){
+                n =len-1;
+            }
+        }
+        img.src='imgs/'+(n+1)+'.jpg';
+        sp.innerHTML = n+1 + " / " + 4;
+        pp.innerHTML = wenzi[n];
+    }
+</script>
+</body>
+</html>
