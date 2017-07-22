@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>微博发布</title>
+    <!-- 稍后添加功能 -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .box {
+            width: 600px;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        textarea {
+            outline-style: none;
+            border: 1px solid #ccc;
+            width: 450px;
+            height: 300px;
+            resize: none;
+            font-size: 20px;
+        }
+        label {
+            margin-left: 8px;
+            font-size: 20px;
+        }
+        button {
+            width: 60px;
+            height: 30px;
+            font-size: 20px;
+        }
+        ul {
+            padding: 10px 80px;
+        }
+        li {
+            font: 500 20px/30px "simsun";
+            border-bottom: 1px dashed #ccc;
+            position: relative;
+        }
+        a {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <label id="lab" for="txt">请输入</label>
+    <textarea id="txt"></textarea>
+    <button>发布</button>
+    <ul>
+        <!--<li>111 <a href="#">删除</a></li>-->
+    </ul>
+</div>
+</body>
+<script src="myTool.js"></script>
+<script>
+    var box=$('#box');
+    var txt=$('#txt');
+    var btn=$('button')[0];
+    var oUl=$('ul')[0];
+    var lab=$('#lab');
+    btn.onclick=function(){
+        if(txt.value==""){
+            return alert('请输入文字');
+        }
+       oUl.innerHTML+="<li>"+txt.value+"<a href='javascript:;'>删除</a></li>";
+        var oA=$('a');
+        for(var i=0;i<oA.length;i++){
+            oA[i].onclick=function(){
+                this.parentNode.parentNode.removeChild(this.parentNode);
+            }
+        }
+    }
+</script>
+</html>
