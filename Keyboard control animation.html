@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>键盘控制动画</title>
+    <!-- 点击键盘上下左右键，和左上键键，进行横向运动和斜向运动-->
+    <style>
+        #box {
+            width: 85px;
+            height: 81px;
+            background: url(fly.gif);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+    var onOff = {
+        l:false,
+        r:false,
+        t:false,
+        b:false
+    }
+    var oBox = document.getElementById("box");
+
+    setInterval(function(){
+        if (onOff.l) {
+            oBox.style.left = oBox.offsetLeft - 8 +"px";
+            oBox.style.transform = "rotate(270deg)";
+        } else if (onOff.r) {
+            oBox.style.left = oBox.offsetLeft + 8 +"px";
+            oBox.style.transform = "rotate(90deg)";
+
+        }
+        if (onOff.t) {
+            oBox.style.top = oBox.offsetTop - 8 +"px";
+            oBox.style.transform = "rotate(0deg)";
+        } else if (onOff.b) {
+            oBox.style.top = oBox.offsetTop + 8 +"px";
+            oBox.style.transform = "rotate(180deg)";
+        }
+        // 单独判断
+        if (onOff.l&&onOff.t) {
+            oBox.style.transform = "rotate(315deg)";
+        } else if (onOff.l&&onOff.b) {
+            oBox.style.transform = "rotate(225deg)";
+        } else if (onOff.t&&onOff.r) {
+            oBox.style.transform = "rotate(45deg)";
+        } else if (onOff.b&&onOff.r) {
+            oBox.style.transform = "rotate(135deg)";
+        }
+    },30);
+    // 按下键盘
+    document.onkeydown = function(ev) {
+        ev = ev || event;
+        switch (ev.keyCode) {
+            case 37 : onOff.l = true;break;
+            case 38 : onOff.t = true;break;
+            case 39 : onOff.r = true;break;
+            case 40 : onOff.b = true;break;
+        }
+    }
+    // 抬起键盘
+    document.onkeyup = function(ev) {
+        var e = ev || event;
+
+        switch(e.keyCode) {
+            case 37 : onOff.l = false;break;
+            case 38 : onOff.t = false;break;
+            case 39 : onOff.r = false;break;
+            case 40 : onOff.b = false;break;
+        }
+    }
+</script>
+</html>

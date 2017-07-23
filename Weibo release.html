@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>微博发布</title>
-    <!-- 稍后添加功能 -->
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            list-style: none;
+    <head>
+        <meta charset="UTF-8">
+        <title>微博发布</title>
+        <!--  功能分析,单击发送, 按下回车键也可以发送,按下ctrl+enter发送 -->
+        <style>
+            #box {
+                width: 500px;
+                height: 500px;
+                margin: 20px auto;
+                border:1px solid red;
+                position: relative;
+            }
+            textarea {
+                position: absolute;
+                left: 20px;
+                top: 50px;
+                border: 1px solid #e3e3e3;
+                width: 312px;
+                height: 60px;
+                outline: none;
+            }
+            #content {
+                width: 312px;
+                height: 300px;
+                position: absolute;
+                left: 20px;
+                top: 150px;
+                border:1px dashed #e3e3e3;
+            }
+            #btn {
+                position: absolute;
+                right: 115px;
+                top: 95px;
+            }
+             
+            #oSel {
+                position: absolute;
+                top: 95px;
+                height: 24px;
+                right:95px;
+                width: 20px;
+            }
+             #s1{
+                position: absolute;
+                right: 10px;
+                top:95px;
+             }
+             
+        </style>
+    </head>
+
+    <body>
+        <div id="box">
+            <div id="content"></div>
+            <textarea id="text">
+                
+            </textarea>
+            <input type="button" value="发送" id="btn" />
+            <select id="oSel">
+                <option value="e">按下enter键发送信息</option>
+                <option value="c">按下ctrl+enter键发送信息</option>
+            </select>
+            <span id="s1">切换方式</span>
+        </div>
+    </body>
+    <script>    
+        var oText = document.getElementById("text");
+        var oBtn = document.getElementById("btn");
+        var oSel = document.getElementById('oSel');
+        var oCon = document.getElementById("content");
+        oText.focus();
+        // 单击事件
+        oBtn.onclick = function() {
+            fn();
         }
-        .box {
-            width: 600px;
-            padding: 10px;
-            margin: 20px auto;
-            border: 1px solid #ccc;
+        function fn() {
+            var str = oText.value;      
+            oCon.innerHTML += "<p>" + str +"</p>";
+            oText.value = "";
+            oText.focus();
         }
-        textarea {
-            outline-style: none;
-            border: 1px solid #ccc;
-            width: 450px;
-            height: 300px;
-            resize: none;
-            font-size: 20px;
-        }
-        label {
-            margin-left: 8px;
-            font-size: 20px;
-        }
-        button {
-            width: 60px;
-            height: 30px;
-            font-size: 20px;
-        }
-        ul {
-            padding: 10px 80px;
-        }
-        li {
-            font: 500 20px/30px "simsun";
-            border-bottom: 1px dashed #ccc;
-            position: relative;
-        }
-        a {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-    </style>
-</head>
-<body>
-<div class="box" id="box">
-    <label id="lab" for="txt">请输入</label>
-    <textarea id="txt"></textarea>
-    <button>发布</button>
-    <ul>
-        <!--<li>111 <a href="#">删除</a></li>-->
-    </ul>
-</div>
-</body>
-<script src="myTool.js"></script>
-<script>
-    var box=$('#box');
-    var txt=$('#txt');
-    var btn=$('button')[0];
-    var oUl=$('ul')[0];
-    var lab=$('#lab');
-    btn.onclick=function(){
-        if(txt.value==""){
-            return alert('请输入文字');
-        }
-       oUl.innerHTML+="<li>"+txt.value+"<a href='javascript:;'>删除</a></li>";
-        var oA=$('a');
-        for(var i=0;i<oA.length;i++){
-            oA[i].onclick=function(){
-                this.parentNode.parentNode.removeChild(this.parentNode);
+        // 按下键盘事件
+        document.onkeydown = function(ev) {
+            ev = ev || event;
+            if (oSel.value == "e") {
+                if (ev.keyCode == 13 && !ev.ctrlKey) {
+                    fn();
+                }
+            }
+            if (oSel.value == "c") {
+                if (ev.keyCode == 13 && ev.ctrlKey) {
+                    fn();
+                }
             }
         }
-    }
-</script>
+        document.onkeyup = function() {
+            oText.focus();
+        }
+    </script>
 </html>
