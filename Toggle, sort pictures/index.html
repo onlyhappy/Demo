@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+    <!-- 功能实现：图片大小排序，打乱顺序。运用空数组存储对应的li长度，对数组进行排序，设置对应的图片信息提示，和排列顺序-->
+    <style type="text/css">
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            margin: 0 auto;
+            width: 1100px;
+        }
+
+        li {
+            float: left;
+            padding: 5px;
+            margin: 0 5px;
+            background-color: white;
+        }
+
+        p {
+            margin: 0;
+            text-align: center;
+            background-color: red;
+            line-height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        img {
+            vertical-align: top;
+            width: 250px;
+            height: 150px;
+        }
+
+        div {
+            margin: 30px auto;
+            width: 280px;
+        }
+
+        div:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        a {
+            text-decoration: none;
+            width: 100px;
+            line-height: 40px;
+            display: block;
+            color: white;
+            background:pink;
+            text-align: center;
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a href="javascript:;">从小到大</a>
+    <a href="javascript:;">打乱顺序</a>
+</div>
+<ul>
+    <li>
+        <img src="img/1.jpg"/>
+
+        <p>1-暹罗猫</p>
+    </li>
+    <li>
+        <img src="img/2.jpg"/>
+
+        <p>2-布偶猫</p>
+    </li>
+    <li>
+        <img src="img/3.jpg"/>
+
+        <p>3-苏格兰折耳猫</p>
+    </li>
+    <li>
+        <img src="img/4.jpg"/>
+
+        <p>4-英国短毛猫</p>
+    </li>
+    <li>
+        <img src="img/5.jpg"/>
+
+        <p>5-波斯猫</p>
+    </li>
+    <li>
+        <img src="img/6.jpg"/>
+
+        <p>6-异国短毛猫</p>
+    </li>
+    <li>
+        <img src="img/7.jpg"/>
+
+        <p>7-俄罗斯蓝猫</p>
+    </li>
+    <li>
+        <img src="img/8.jpg"/>
+
+        <p>8-孟买猫</p>
+    </li>
+</ul>
+<script type="text/javascript">
+    var as = document.getElementsByTagName('a');
+    var lis = document.getElementsByTagName('li');
+    var imgs = document.getElementsByTagName('img');
+    var ps = document.getElementsByTagName('p');
+    var arrimg = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg', 'img/5.jpg', 'img/6.jpg', 'img/7.jpg', 'img/8.jpg']
+    var arrtext = ['1-暹罗猫', '2-布偶猫', '3-苏格兰折耳猫', '4-英国短毛猫', '5-波斯猫', '6-异国短毛猫', '7-俄罗斯蓝猫', '8-孟买猫'];
+    var arr = [];
+    var onOff = false;
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].index = i;
+        arr.push(lis[i].index);
+    }
+    //    点击切换
+    as[0].onclick = function () {
+        if (onOff) {
+            arr1 = arr.sort(function (a, b) {
+                return a - b;
+            })
+            c();
+            as[0].innerHTML = '从大到小';
+        } else {
+            arr1 = arr.sort(function (a, b) {
+                return b - a;
+            })
+            c();
+            as[0].innerHTML = '从小到大';
+        }
+        onOff = !onOff;
+    };
+    //点击打乱顺序
+    as[1].onclick = function () {
+        var arr4 = [];
+        var arr2 = arrimg;
+        var arr3 = arrtext;
+        arr4 = arr.sort(function () {
+            //返回随机数
+            return Math.random() - 0.5;
+        })
+        for (var i = 0; i < ps.length; i++) {
+            var b = arr4[i];
+            ps[i].innerHTML = arr3[b];
+            imgs[i].src = arr2[b];
+        }
+    }
+    //相同样式集合
+    function c() {
+        var arr1 = [];
+        var arr2 = arrimg;
+        var arr3 = arrtext;
+        var arr1 = arr;
+        //遍历图片的长度，给相应数组对应的位置
+        for (var i = 0; i < imgs.length; i++) {
+            var a = arr1[i];
+            ps[i].innerHTML = arr3[a];
+            imgs[i].src = arr2[a];
+        }
+    }
+</script>
+</body>
+</html>

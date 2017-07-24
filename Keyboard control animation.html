@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>键盘控制动画</title>
-    <!-- 点击键盘上下左右键，和左上键键，进行横向运动和斜向运动-->
+    <!-- 点击键盘上下左右键，和左上键键，进行横向运动和斜向运动,有限制范围-->
     <style>
         #box {
             width: 85px;
             height: 81px;
-            background: url(fly.gif);
+            background: url("https://github.com/onlyhappy/Demo/tree/master/System%20clock/img/fly.gif");
             position: absolute;
             left: 0;
             top: 0;
@@ -53,6 +53,7 @@
         } else if (onOff.b&&onOff.r) {
             oBox.style.transform = "rotate(135deg)";
         }
+        fn();
     },30);
     // 按下键盘
     document.onkeydown = function(ev) {
@@ -67,12 +68,26 @@
     // 抬起键盘
     document.onkeyup = function(ev) {
         var e = ev || event;
-
         switch(e.keyCode) {
             case 37 : onOff.l = false;break;
             case 38 : onOff.t = false;break;
             case 39 : onOff.r = false;break;
             case 40 : onOff.b = false;break;
+        }
+    }
+    // 限制范围
+   function fn(){
+        if(box.offsetLeft<0){
+            box.style.left=0;
+        }
+        if(box.offsetLeft>(document.documentElement.clientWidth-box.clientWidth)){
+            box.style.left=document.documentElement.clientWidth-box.clientWidth+'px';
+        }
+        if(box.offsetTop<0){
+            box.style.top=0;
+        }
+        if(box.offsetTop>(document.documentElement.clientHeight-box.clientHeight)){
+            box.style.top=document.documentElement.clientHeight-box.clientHeight+'px';
         }
     }
 </script>
