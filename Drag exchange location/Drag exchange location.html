@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖拽案例</title>
+    <!-- 功能实现：拖拽切换位置，运用碰撞检测到最贴近的图片，切换位置-->
+    <style>
+        body {
+            background: black;
+        }
+        img {
+            position: absolute;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="img/1.jpg" alt=""/>
+    <img src="img/2.jpg" alt=""/>
+    <img src="img/3.jpg" alt=""/>
+    <img src="img/4.jpg" alt=""/>
+    <img src="img/5.jpg" alt=""/>
+    <img src="img/6.jpg" alt=""/>
+    <img src="img/7.jpg" alt=""/>
+    <img src="img/8.jpg" alt=""/>
+    <img src="img/9.jpg" alt=""/>
+</div>
+<script>
+    //    获取图片
+    var oImg = document.getElementsByTagName('img');
+    //    让图片撒开，并赋值拖拽函数
+    for (var i = 0; i < oImg.length; i++) {
+        var l = i % 3;
+        var t = parseInt(i / 3);
+        oImg[i].style.left = 200 * l + 'px';
+        oImg[i].style.top = 200 * t + 'px';
+        fn(oImg[i]);
+    }
+    //  拖拽函数
+    function fn(obj) {
+        obj.onmousedown = function (ev) {
+            for (var i = 0; i < oImg.length; i++) {
+                oImg[i].style.transform = ''
+                oImg[i].style.zIndex = 1;
+            }
+            obj.style.zIndex = 999;
+            ev = ev || event;
+//            获取图片的固定水平垂直位置
+            var disX = ev.clientX - obj.offsetLeft;
+            var disY = ev.clientY - obj.offsetTop;
+//            阻止浏览器默认行为
+            ev.preventDefault && ev.preventDefault();
+            ev.returnValue = false;
+//            为兼容IE低版本
+            obj.setCapture && obj.setCapture();
+            var firstL = obj.offsetLeft;
+            var firstT = obj.offsetTop;
+            var newObj = null;
+
+//            鼠标滑动
+            document.onmousemove = function (ev) {
+                ev = ev || event;
+//                obj.style.left = ev.clientX - disX + "px";
+//                obj.style.top = ev.clientY - disY +"px";
+                var l = ev.clientX - disX;
+                var t = ev.clientY - disY;
+                var maxT = document.documentElement.clientHeight - obj.clientHeight;
+                var maxL = document.documentElement.clientWidth - obj.clientWidth;
+                l = l < 0 ? 0 : l;
+                l = l > maxL ? maxL : l;
+                t = t < 0 ? 0 : t;
+                t = t > maxT ? maxT : t;
+//                声明一个空数组
+                var arrImg = []
+                obj.style.left = l + 'px';
+                obj.style.top = t + 'px';
+//                判断所有的图片
+                for (var i = 0; i < oImg.length; i++) {
+//                    排除自己
+                    if (oImg[i] != obj) {
+//                        拿当前与其他碰撞   对比
+                        if (jiance(obj, oImg[i])) {
+//                           如果是碰撞，就添加上
+                            arrImg.push(oImg[i]);
+                        }
+                    }
+                }
+                console.log(arrImg);
+                newObj = null;
+                var minVaule = Infinity;
+//                查看空数组，
+                if (arrImg.length) {
+//              循环数组   看看那个里的最近
+                    for (var i = 0; i < arrImg.length; i++) {
+                        var a = arrImg[i].offsetLeft - obj.offsetLeft;
+                        var b = arrImg[i].offsetTop - obj.offsetTop;
+                        var c = a * a + b * b;
+                        if (minVaule > c) {
+                            minVaule = c;
+                            newObj = arrImg[i];
+                        }
+                    }
+                }
+                console.log(newObj);
+            }
+            document.onmouseup = function () {
+//                取消事件
+                document.onmousemove = document.onmouseup = null;
+//                抬起鼠标，释放全局捕获
+                obj.releaseCapture && obj.releaseCapture();
+//                弹起鼠标看看有碰撞上最小的距离图片
+                if (newObj) {
+                    obj.style.transform = '0.5s';
+                    newObj.style.transform = '0.5s';
+                    obj.style.left = newObj.offsetLeft + 'px';
+                    obj.style.top = newObj.offsetTop + 'px';
+                    newObj.style.left = firstL + 'px';
+                    newObj.style.top = firstT + 'px';
+
+                } else {
+                    obj.style.left = firstL + 'px';
+                    obj.style.top = firstT + 'px';
+                }
+            }
+        }
+    }
+//    控制碰撞检测函数
+    function jiance(obj, obj1) {
+        var oW = obj.offsetWidth;
+        var oH = obj.offsetHeight;
+        var oL = obj.offsetLeft;
+        var oT = obj.offsetTop;
+
+        var oW1 = obj1.offsetWidth;
+        var oH1 = obj1.offsetHeight;
+        var oL1 = obj1.offsetLeft;
+        var oT1 = obj1.offsetTop;
+        if (oL > oW1 + oL1 || oT > oH1 + oT1 || oW + oL < oL1 || oT + oH < oT1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+</body>
+</html>
