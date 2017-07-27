@@ -32,4 +32,6 @@
 ### July 22, 2017 [Weibo release](https://github.com/onlyhappy/Demo/blob/master/Weibo%20release.html)
 ### July 23, 2017 [Keyboard control animation](https://github.com/onlyhappy/Demo/blob/master/Keyboard%20control%20animation.html)
 ### July 24, 2017 [Toggle, sort pictures](https://github.com/onlyhappy/Demo/tree/master/Toggle%2C%20sort%20pictures)
-### July 25, 2017 Drag exchange location
+### July 25, 2017 [Drag exchange location](https://github.com/onlyhappy/Demo/tree/master/Drag%20exchange%20location)
+### July 26, 2017 Magnifying glass case
+### July 27, 2017 Taximeter

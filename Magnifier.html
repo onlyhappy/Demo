@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>放大镜案例</title>
+    <!-- 仿淘宝放大镜案例，仿淘宝商品放大效果-->
+    <style>
+        #box {
+            width: 480px;
+            height: 288px;
+            background: url("img/small.png");
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+
+        #zhe {
+            width: 100px;
+            height: 100px;
+            display: none;
+            background: url("img/bj.png");
+            position: absolute;
+        }
+
+        #bigbox {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            background: url("img/big.jpg");
+            top: 50px;
+            left: 550px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="zhe"></div>
+</div>
+<div id="bigbox"></div>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var box = $('box');
+    var zhe = $('zhe');
+    var bigbox = $('bigbox');
+    //    鼠标进入事件
+    box.onmouseover = function () {
+        zhe.style.display = 'block';
+        bigbox.style.display = 'block';
+    }
+    //    鼠标移出事件
+    box.onmouseout = function () {
+        zhe.style.display = 'none';
+        bigbox.style.display = 'none';
+    }
+    //    鼠标移动事件
+    box.onmousemove = function (ev) {
+        ev = ev || event;
+        var l = ev.clientX - box.offsetLeft - zhe.offsetWidth / 2;
+        var t = ev.clientY - box.offsetTop - zhe.offsetHeight / 2;
+
+        var maxL = box.offsetWidth - zhe.offsetWidth;
+        var maxT = box.offsetHeight - zhe.offsetHeight;
+        l = l < 0 ? 0 : l;
+        l = l > maxL ? maxL : l;
+        t = t < 0 ? 0 : t;
+        t = t > maxT ? maxT : t;
+        zhe.style.left = l + 'px';
+        zhe.style.top = t + 'px';
+//        大图片相应位置
+        bigbox.style.backgroundPosition = -4 * l + "px " + -4 * t + "px";
+    }
+</script>
+</body>
+</html>
