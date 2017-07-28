@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>上下滚动图片</title>
+    <!-- 点击按钮，移动商品信息-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 166px;
+            height: 300px;
+            border: 1px solid red;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -220px;
+        }
+
+        a {
+            position: absolute;
+            width: 166px;
+            height: 20px;
+            background: #ccc;
+        }
+
+        #up {
+            top: 0;
+            background: url("images/top.png");
+            z-index: 1;
+        }
+
+        #bot {
+            bottom: 0;
+            background: url("images/btm.png");
+            z-index: 1;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box">
+    <img src="images/content.jpg" id="img"/>
+    <a href="javascript:;" id="up"></a>
+    <a href="javascript:;" id="bot"></a>
+</div>
+<script>
+        var oBox = document.getElementById('box');
+        var oUp = document.getElementById('up');
+        var oDown = document.getElementById('bot');
+        var oImg = document.getElementById('img');
+        var n = 0;
+        var timer = null;
+        var minTop = 300 - 1140;
+        oUp.onmouseover = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                n -= 20;
+                oImg.style.top = n + 'px';
+                if (n <= minTop) {
+                    clearInterval(timer);
+                    oImg.style.top = minTop + 'px';
+                }
+            }, 100)
+        }
+        oDown.onmouseover = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                n += 20;
+                oImg.style.top = n + 'px';
+                if (n >= 0) {
+                    clearInterval(timer);
+                    oImg.style.top = 0;
+                }
+            }, 100)
+        }
+        oBox.onmouseout = function () {
+            clearInterval(timer);
+        }
+
+</script>
+</body>
+
+</html>
