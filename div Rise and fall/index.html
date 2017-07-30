@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>div上升下落</title>
+    <!-- 点击实现div小方块，上升下降效果 -->
+    <style>
+        div{
+            width:50px;
+            height: 50px;
+            background: red;
+            float: left;
+            margin-left: 10px;
+            position: relative;
+            top:10px;
+        }
+    </style>
+</head>
+<body>
+<script src="move.js"></script>
+<script>
+    var arr=['red','yellow','pink','green'];
+    var str='';
+
+    for(var i=0;i<22;i++){
+        str+="<div style='background-color:"+arr[i%arr.length]+"'></div>"
+    }
+    document.body.innerHTML=str;
+    var box=document.getElementsByTagName('div');
+    var onOff=true;
+    document.onclick=function(){
+      if(onOff){
+          for(var i=0;i<box.length;i++){
+              fn(i,15,500,false);
+          }
+      }else{
+          for(var i=0;i<box.length;i++){
+              fn(i,20,10,true);
+          }
+      }
+    }
+    function fn(n,speed,target,bool){
+        setTimeout(function(){
+            move(box[n],"top",speed,target,function(){
+              if(n==box.length-1){
+                 onOff=bool;
+              }
+          })
+        },200*n)
+    }
+</script>
+</body>
+</html>

@@ -33,5 +33,8 @@
 ### July 23, 2017 [Keyboard control animation](https://github.com/onlyhappy/Demo/blob/master/Keyboard%20control%20animation.html)
 ### July 24, 2017 [Toggle, sort pictures](https://github.com/onlyhappy/Demo/tree/master/Toggle%2C%20sort%20pictures)
 ### July 25, 2017 [Drag exchange location](https://github.com/onlyhappy/Demo/tree/master/Drag%20exchange%20location)
-### July 26, 2017 Magnifying glass case
-### July 27, 2017 Taximeter
+### July 26, 2017 [Magnifier](https://github.com/onlyhappy/Demo/blob/master/Magnifier.html)
+### July 27, 2017 [Taximeter](https://github.com/onlyhappy/Demo/blob/master/Taximeter.html)
+### July 28, 2017 [Mobile information](https://github.com/onlyhappy/Demo/blob/master/Mobile%20information/index.html)
+### July 29, 2017 div Rise and fall
+### July 30, 2017 Seamless carousel

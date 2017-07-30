@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无缝轮播图</title>
+    <!-- 原生js实现无缝轮播效果，封装运动函数自定义运动，运用迅速定位最后一张，第一张实现无缝轮播效果 -->
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 5000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="all" id='all'>
+        <div class="screen" id="screen">
+            <ul id="ul">
+            	<li><img src="images/5.jpg" width="500" height="200"/></li>
+                <li><img src="images/1.jpg" width="500" height="200"/></li>
+                <li><img src="images/2.jpg" width="500" height="200"/></li>
+                <li><img src="images/3.jpg" width="500" height="200"/></li>
+                <li><img src="images/4.jpg" width="500" height="200"/></li>
+                <li><img src="images/5.jpg" width="500" height="200"/></li>
+                <li><img src="images/1.jpg" width="500" height="200"/></li>
+            </ul>
+            <ol>
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+            </ol>
+            <div id="arr">
+                <span id="left"><</span>
+                <span id="right">></span>
+            </div>
+        </div>
+    </div>
+<script src="move.js"></script>
+ <script>
+            var oArr = $("#arr");
+            var oLeft = $("#left");
+            var oRight = $("#right");
+            var oAll = $("#all");
+            var oUl = $("#ul");
+            var oOl = $("ol",$("#screen"))[0];
+            var aNavLi = $("li",oOl);
+            var timer = null;
+            var k = 1;
+
+            oAll.onmouseover = function() {
+                oArr.style.display = "block";
+                clearInterval(timer);
+            }
+            oAll.onmouseout = function() {
+                oArr.style.display = "none";
+                timer = setInterval(autoPlay,2000);
+            }
+            // 获取一张图片的宽度
+            var imgW = $("img",oUl)[0].offsetWidth;
+            console.log(imgW);  
+            // 将ul的位置 往左错位一张图  将第一张图 放到显示区域
+            oUl.style.left = -imgW*k + "px";
+            
+            oRight.onclick = autoPlay;
+            
+            oLeft.onclick = function() {
+                k--;
+                core();
+            }
+            //  移动到哪，图片到哪。
+            for(var i = 0; i < aNavLi.length; i++) {
+                aNavLi[i].index = i;
+                aNavLi[i].onmouseover = function() {
+                    k = this.index + 1;
+                    core();
+                }
+            }
+            
+            timer = setInterval(autoPlay,2000);
+            
+            function autoPlay(){
+                k++;
+                core(); 
+            }
+            
+            function core() {
+                move(oUl,"left",15,-imgW*k,function(){
+                    // 判断最后一张图片运动完毕了 将k改成1 让oUl迅速定位第一张的位置上
+                    if (k >= $("li",oUl).length-1) {
+                        k = 1;
+                        // 让oUl迅速定位第一张的位置
+                        oUl.style.left = -imgW*k + "px";
+                    }
+                    if (k <=0) {
+                        k = $("li",oUl).length-2;
+                        oUl.style.left = -imgW*k + "px";
+                    }
+                    // 将小方块清除
+                    for(var i = 0; i < aNavLi.length; i++) {
+                        aNavLi[i].className = "";
+                    }
+                    // 当前小方块显示
+                    aNavLi[k-1].className = "current";
+                });
+            }
+    </script>
+</body>
+</html>
+
