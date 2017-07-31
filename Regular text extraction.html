@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <!--用正则表达式，解析html源代码,提取文本-->
+    <style type="text/css">
+        #text {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+
+        .code {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<p class="code">html源代码解析出文字</p>
+<input type="button" value="单击提取文本" id="btn"/><br/>
+		<textarea id="text">
+			
+		</textarea>
+
+<div id="box"></div>
+</body>
+<script src="myTool.js"></script>
+<script type="text/javascript">
+    var oBtn = document.getElementById("btn");
+    var oText = document.getElementById("text");
+    var oBox = document.getElementById("box");
+
+    oBtn.onclick = function () {
+        var str = oText.value;
+//			var re =  /<[a-z0-9]>/;
+        var re = /<[^>]>/g;
+        oBox.innerHTML = str.replace(re, '')
+        console.log(str);
+        console.log(oBox);
+    }
+</script>
+</html>
