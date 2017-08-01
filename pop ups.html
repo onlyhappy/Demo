@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>简单弹出效果</title>
+        <!-- 运用jquery实现滑动效果，常用于导航栏，进行下拉页面的滑动效果，带来更好的体验 -->
+        <style>
+        *{
+        	margin:0;
+        	padding:0;
+        }
+        a{
+        	width:100px;
+        	height: 100px;
+            line-height: 100px;
+            font-size: 35px;
+            text-align: center;
+            text-decoration: none;
+            color:yellow;
+        	background: red;
+        	display: block;
+        }
+        #hideDiv{
+        	width: 1000px;
+        	height: 500px;
+            margin: 0 auto;
+            background-color: rgba(10, 10, 10, 0.8);
+        }
+        .qiaosini{
+        	color:#fff;
+            margin-top: 20px;
+        	font-size: 26px;
+            text-align: center;
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
+        .toggleColor{
+		    background-color: rgba(10, 10, 10, 0.8);
+		}
+        </style>
+    </head>
+    <body>
+    <div class="box">
+    <a href="#" id="open" class="open">按钮</a>
+    <div id="hideDiv" class="hide">
+        <span class="qiaosini">曾经有一份真挚的代码摆在我面前，我没有珍惜，<br/>
+                               等到我失去的时候才后悔莫及，<br/>
+                               人世间最痛苦的事莫过于此......<br/>
+                               如果上天能够给我一个再来一次的机会，<br/>
+                               我会对那个代码说三个字：<br/>
+                               “我敲你！”<br/>
+                               如果非要在这份敲上加一个期限，<br/>
+                               我希望是.....一万年！</span>
+    </div>
+    </div>
+    <script src=" http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+             $('#open').click(function(event) {
+                 var cor=$(this).hasClass('toggleColor');
+                 if(cor){
+                    $(this).removeClass('toggleColor').css({"height":100})
+                    $('#hideDiv').stop().slideUp(400)
+                 }else{
+                     $(this).addClass("toggleColor").css({"height":100});
+                  $("#hideDiv").stop().slideDown(1000);
+                 }
+
+             });
+        </script>
+    </body>
+</html>
