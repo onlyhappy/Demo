@@ -29,9 +29,9 @@ $(document).ready(function() {
 
 		// 给下一张ol li加上now的属性
 		ol_lis.eq(next).addClass("now");		
-		
-		
+
 		ul_lis.removeClass();//清除样式
+
 		ul_lis.eq(i).addClass("active");
 		//给当前图片加上活跃效果
 		

@@ -40,4 +40,5 @@
 ### July 30, 2017 [Seamless carousel](https://github.com/onlyhappy/Demo/blob/master/Seamless%20carousel/index.html)
 ### July 31, 2017 [regular expression](https://github.com/onlyhappy/Demo/blob/master/Regular%20text%20extraction.html)
 ### Aug 1,2017 [pop ups](https://github.com/onlyhappy/Demo/blob/master/pop%20ups.html)
-### Aug 2,2017 ### Aug 1,2017 pop ups
+### Aug 2,2017 [jQuery Carousel figure](https://github.com/onlyhappy/Demo/tree/master/jQuery%20Carousel%20figure)
+### Aug 3,2017 fadeIn Carousel figure

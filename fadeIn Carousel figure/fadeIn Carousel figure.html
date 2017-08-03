@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出轮播图</title>
+    <!-- jquery实现淡入淡出轮播图-->
+    <style type="text/css">
+        #box {
+            margin: 50px auto;
+            width: 771px;
+            height: 245px;
+            position: relative;
+        }
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #list {
+            width: 771px;
+            height: 245px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #list li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        ol#nav li {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: orange;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+            color: #fff;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        #nav {
+            position: absolute;
+            left: 30px;
+            bottom: 5px;
+        }
+
+        ol#nav .active {
+            background: #f00;
+        }
+        .aa{
+            width:30px;
+            height: 40px;
+            border:1px solid #000;
+            background:rgba(0,0,0,0.5);
+            color:white;
+            font-size: 18px;
+            font-weight: 600;
+            position: absolute;
+            top:100px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+        }
+        #a2{
+            right:0;
+        }
+    </style>
+</head>
+<script src="jq.js"></script>
+<script type="text/javascript">
+    $(function() {
+        //设定变量当计数器
+        var k = 0;
+        var timer = null;
+        // 鼠标移上 nav导航 然后 让对应的list里面的li 加上样式   让其他的去掉样式
+        $("#nav li").mouseover(function(){
+            k = $(this).index();
+            fn();
+        });
+        timer = setInterval(auto,2000)
+        function auto(){
+            k++;
+            if(k> $("#nav li").length-1) k= 0;
+            fn();
+        }
+        // 封装了一个核心函数
+        function fn() {
+            $("#nav li").eq(k).addClass("active").siblings().removeClass("active");
+
+            $("#list li").eq(k).fadeIn(500).siblings().fadeOut(500);
+        }
+        $('#a1').click(function(){
+            k--;
+            if(k<0) k= $('#nav li').length-1;
+            fn();
+        })
+        $('#a2').click(function(){
+            auto();
+        })
+        // 移到盒子身上 让定时器停止
+        $("#box").mouseover(function(){
+            clearInterval(timer);
+        })
+        //离开盒子以后 继续走
+        $("#box").mouseout(function(){
+            timer = setInterval(auto,2000);
+        })
+    })
+</script>
+<body>
+<div id="box">
+    <ul id="list">
+        <li style="display: list-item;"><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+    <ol id="nav">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <a id="a1" href="javascirpt:;" class='aa'><</a>
+    <a id="a2" href="javascirpt:;" class='aa'>></a>
+</div>
+</body>
+</html>
