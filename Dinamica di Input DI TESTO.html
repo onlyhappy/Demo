@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>动态输入文字</title>
+    <!-- 动态输入文字显示，出现写字效果-->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-moz-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        .wrap {
+            width: 1000px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            font-family: '微软雅黑' font-weight : 300;
+        }
+
+        .word {
+            font-weight: 700;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            animation: blink .7s infinite;
+
+        }
+
+        .saySection {
+            margin-top: 50px;
+        }
+
+        .saySection input {
+            font-size: 30px;
+        }
+
+        .saySection .txtSay {
+            padding-left: 10px;
+        }
+
+        .saySection .btnSay {
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //  实现文字一个一个出现
+            var str = "路漫漫其修远兮吾将上下而求索";
+            var timer = null;
+            // 获取str第num个
+            var num = 0;
+            // 让str的每一项往newStr拼
+            var newStr = "";
+            timer = setInterval(function () {
+                if (str[num] != undefined) {
+                    newStr += str[num];
+                    // 让span标签内容 等于 str里面的第num个
+                    $(".word").text(newStr);
+                    num++;
+                } else {
+                    //停止定时器
+                    clearInterval(timer);
+                    timer = null;
+                    //隐藏光标
+                    $(".typed-cursor").hide();
+                }
+            }, 500)
+
+            $("#btnSay").click(function () {
+                // 获取文本框中的值
+                var str = $("#inValue").val();
+                if (!str.length) {
+                    alert("请您输入点什么吧");
+                    $("#inValue").focus();
+                } else {
+                    var num = 0;
+                    var newStr = "";
+                    clearInterval(timer);
+
+                    timer = setInterval(function () {
+                        if (str[num] != undefined) {
+                            newStr += str[num];
+                            $(".word").text(newStr);
+                            num++;
+                        } else {
+                            clearInterval(timer);
+                            timer = null;
+                            $(".typed-cursor").hide();
+                        }
+                    }, 500)
+
+                    //清空value值
+                    $("#inValue").val("");
+                }
+
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <h1>
+        动态输入文字 ： <span class="word"></span><span class="typed-cursor">|</span> ！
+    </h1>
+    <div class="saySection">
+        <input type="text" id="inValue" class="txtSay">
+        <input type="button" value="走起" id="btnSay" class="btnSay">
+    </div>
+</div>
+</body>
+</html>
