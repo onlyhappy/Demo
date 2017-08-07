@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>按键变色</title>
+    <!-- 实现按下键盘改版颜色，根据键盘的keyCode值，判断并且改变颜色 -->
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: purple;
+            margin: 0 auto;
+            font: 20px/200px "微软雅黑";
+            color: white;
+        }
+
+        #box, h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>按键改变颜色</h1>
+
+<div id="box">
+    keyCode为<span></span>
+</div>
+</body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    // 按下键盘 触发对应的键 并让其div改变颜色  显示keyCode
+    $(document).keydown(function (e) {
+        // 使用switch语句 进行选择
+        console.log(e.keyCode);//82 71 66 80
+        switch (e.keyCode) {
+            case 82 :
+                $("#box").css("backgroundColor", "red");
+                break;
+            case 71 :
+                $("#box").css("backgroundColor", "green");
+                break;
+            case 66:
+                $("#box").css("backgroundColor", "blue");
+                break;
+            case 80 :
+                $("#box").css("backgroundColor", "pink");
+                break;
+        }
+        // 让span 里面的文本变成当前的keyCode
+        $("#box span").text(e.keyCode);
+    })
+
+</script>
+</html>

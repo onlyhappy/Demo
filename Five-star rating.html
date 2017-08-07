@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>星星品论</title>
+    <!-- 翻找陶博案例，做五行评论效果，点击选中星级，移动选择该样式 -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: #000;
+        }
+        .comment {
+            font-size: 40px;
+            color: yellow;
+        }
+
+        .comment li {
+            float: left;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+</body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    var star1 = "☆";
+    var star2 = "★";
+    $("ul li").on({
+        "mouseover":function(){
+            //防止干扰 先清空所有
+            $("ul li").text(star1);
+            $(this).text(star2).prevAll().text(star2);
+        },
+        "click":function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        },
+        "mouseout":function(){
+            $("ul li").text(star1);
+            // 让被标记过的li变成实心星星 以及它之前的li也变实心
+            $("ul li.active").text(star2).prevAll().text(star2);
+        }
+    })
+</script>
+</html>

@@ -43,4 +43,6 @@
 ### Aug 2,2017 [jQuery Carousel figure](https://github.com/onlyhappy/Demo/tree/master/jQuery%20Carousel%20figure)
 ### Aug 3,2017 [fadeIn Carousel figure](https://github.com/onlyhappy/Demo/tree/master/fadeIn%20Carousel%20figure)
 ### Aug 4,2017 [Provincial choice](https://github.com/onlyhappy/Demo/blob/master/Provincial%20choice.html)
-### Aug 5,2017 Dinamica di Input DI TESTO
+### Aug 5,2017 [Dinamica di Input DI TESTO](https://github.com/onlyhappy/Demo/blob/master/Dinamica%20di%20Input%20DI%20TESTO.html)
+### Aug 6,2017 Key color change
+### Aug 7,2017 Five-star rating
