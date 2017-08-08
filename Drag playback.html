@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖拽回放案例</title>
+    <!-- 点击div进行拖拽，点击按钮回放拖拽行为 -->
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top:50px;
+        }
+    </style>
+</head>
+<body>
+<input id="btn" type="button" value="点击回放"/>
+<div id="box"></div>
+<script>
+    var btn=document.getElementById('btn');
+    var box=document.getElementById('box');
+    var disX;
+    var disY;
+    var arr=[];
+    box.onmousedown=function(ev){
+        ev=ev||event;
+        disX=ev.clientX-this.offsetLeft;
+        disY=ev.clientY-this.offsetTop;
+        arr.push({
+            l:box.offsetLeft,
+            t:box.offsetTop
+        })
+        document.onmousemove=function(ev){
+            ev=ev||event;
+            box.style.left=ev.clientX-disX+'px';
+            box.style.top=ev.clientY-disY+'px';
+            arr.push({
+                l:box.offsetLeft,
+                t:box.offsetTop
+            })
+            console.log(arr);
+        }
+        document.onmouseup=function(){
+            document.onmousemove=document.onmouseup=null;
+        }
+    }
+    var timer=null;
+    btn.onclick=function(){
+        var len=arr.length;
+        timer=setInterval(function(){
+            len--;
+            if(len<0){
+                clearInterval(timer);
+                arr=[];
+            }else{
+                box.style.left=arr[len].l+'px';
+                box.style.top=arr[len].t+'px';
+            }
+            console.log(len);
+
+        },30)
+    }
+</script>
+</body>
+</html>
