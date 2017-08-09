@@ -46,4 +46,5 @@
 ### Aug 5,2017 [Dinamica di Input DI TESTO](https://github.com/onlyhappy/Demo/blob/master/Dinamica%20di%20Input%20DI%20TESTO.html)
 ### Aug 6,2017 [Key color change](https://github.com/onlyhappy/Demo/blob/master/Key%20color%20change.html)
 ### Aug 7,2017 [Five-star rating](https://github.com/onlyhappy/Demo/blob/master/Five-star%20rating.html)
-### Aug 8,2017 Drag playback
+### Aug 8,2017 [Drag playback](https://github.com/onlyhappy/Demo/blob/master/Drag%20playback.html)
+### Aug 9,2017 HTML5 custom video
