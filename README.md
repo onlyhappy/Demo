@@ -47,4 +47,5 @@
 ### Aug 6,2017 [Key color change](https://github.com/onlyhappy/Demo/blob/master/Key%20color%20change.html)
 ### Aug 7,2017 [Five-star rating](https://github.com/onlyhappy/Demo/blob/master/Five-star%20rating.html)
 ### Aug 8,2017 [Drag playback](https://github.com/onlyhappy/Demo/blob/master/Drag%20playback.html)
-### Aug 9,2017 HTML5 custom video
+### Aug 9,2017 [HTML5 custom video](https://github.com/onlyhappy/Demo/blob/master/HTML5%20custom%20video.html)
+### Aug 10,2017 Rock-paper-scissors
