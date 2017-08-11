@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片信息显示效果</title>
+    <!-- 图片信息显示效果，点击图片，显示对应的图片、title属性值，以及图片信息滑动效果。 -->
+    <style>
+        ul {
+            position: absolute;
+        }
+
+        ul li {
+            width: 123px;
+            height: 123px;
+            border: 1px solid red;
+            float: left;
+            margin-left: 50px;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        #aa {
+            position: absolute;
+        }
+
+        .fast{
+            border:1px solid red;
+            box-shadow: 1px 1px 10px red;
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="images/1.jpg" class="aa" title="暹罗猫"><img src="https://raw.githubusercontent.com/onlyhappy/Demo/master/Drag%20exchange%20location/img/1.jpg" alt=""/></a></li>
+    <li><a href="images/2.jpg" class="aa" title="布偶猫"><img src="https://raw.githubusercontent.com/onlyhappy/Demo/master/Drag%20exchange%20location/img/2.jpg" alt=""/></a></li>
+    <li><a href="images/3.jpg" class="aa" title="苏格兰折耳猫"><img src="https://raw.githubusercontent.com/onlyhappy/Demo/master/Drag%20exchange%20location/img/3.jpg" alt=""/></a></li>
+    <li><a href="images/4.jpg" class="aa" title="英国短毛猫"><img src="https://raw.githubusercontent.com/onlyhappy/Demo/master/Drag%20exchange%20location/img/4.jpg" alt=""/></a></li>
+    <li><a href="images/5.jpg" class="aa" title="波斯猫"><img src="https://raw.githubusercontent.com/onlyhappy/Demo/master/Drag%20exchange%20location/img/5.jpg" alt=""/></a></li>
+    <br/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script>
+        $(function () {
+            var x = 10;
+            var y = 20;
+            $("a.aa").mouseover(function (e) {
+                this.myTitle = this.title;
+                this.title = '';
+                var imgTitle = this.myTitle ? "<br/>" + this.myTitle : '';
+                var aa = "<div class='fast' id='aa'><img src='" + this.href + "'/>" + imgTitle + "</div>"
+                $('body').append(aa);
+                $('#aa').css({
+                    "top": (e.pageY + y) + 'px',
+                    "left": (e.pageX + x) + 'PX'
+                }).show('fast');
+            }).mouseout(function () {
+                this.title = this.myTitle;
+                $('#aa').remove();
+            }).mousemove(function (e) {
+                $('#aa').css({
+                    "top": (e.pageY + y) + 'px',
+                    "left": (e.pageX + x) + 'px'
+                })
+            })
+        })
+    </script>
+</ul>
+</body>
+</html>
