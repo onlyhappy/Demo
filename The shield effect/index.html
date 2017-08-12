@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盾牌效果</title>
+    <!-- css3实现盾牌散开，合并效果，运用transition，transform属性各c3方法实现-->
+    <style>
+        body {
+            background-color: green;
+        }
+
+        div {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        div img {
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+
+<input type="button" value="打散">
+<input type="button" value="合并">
+
+<div class="shield">
+    <img src="images/shield_1_01.png" alt="">
+    <img src="images/shield_1_02.png" alt="">
+    <img src="images/shield_1_03.png" alt="">
+    <img src="images/shield_1_04.png" alt="">
+    <img src="images/shield_1_05.png" alt="">
+    <img src="images/shield_1_06.png" alt="">
+    <img src="images/shield_1_07.png" alt="">
+    <img src="images/shield_1_08.png" alt="">
+    <img src="images/shield_1_09.png" alt="">
+</div>
+
+<script>
+    var btn1 = document.querySelector("input:first-child");
+    var btn2 = document.querySelector("input:nth-child(2)");
+    var imgs = document.querySelectorAll(".shield>img");
+
+    btn1.onclick = function () {
+        for (var i = 0; i < imgs.length; i++) {
+            var randomDeg = parseInt(Math.random() * 360);
+            var randomX = parseInt(Math.random() * 1200) - 600;
+            var randomY = parseInt(Math.random() * 800) - 400;
+            imgs[i].style.transform = "translate(" + randomX + "px, " + randomY + "px) rotate(" + randomDeg + "deg)";
+        }
+    }
+
+    btn2.onclick = function () {
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].style.transform = "translate(0px, 0px) rotate(0deg)";
+        }
+    }
+</script>
+</body>
+</html>
