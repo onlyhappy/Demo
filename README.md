@@ -50,4 +50,5 @@
 ### Aug 9,2017 [HTML5 custom video](https://github.com/onlyhappy/Demo/blob/master/HTML5%20custom%20video.html)
 ### Aug 10,2017 [Rock-paper-scissors](https://github.com/onlyhappy/Demo/blob/master/Rock-paper-scissors.html)
 ### Aug 11,2017 [Picture hint effect](https://github.com/onlyhappy/Demo/blob/master/Picture%20hint%20effect.html)
-### Aug 12,2017 The shield effect
+### Aug 12,2017 [The shield effect](https://github.com/onlyhappy/Demo/blob/master/The%20shield%20effect/index.html)
+### Aug 13,2017 Scaled list

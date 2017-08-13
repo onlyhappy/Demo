@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>仿搜狐缩放列表</title>
+    <!-- 模仿搜狐缩放列表，用于tab栏切换效果，查看文字信息等效果 -->
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div id="box" class="box">
+    <div id="menu" class="menu">
+        <h1>观看排行榜</h1>
+        <ul>
+            <li>每日</li>
+            <li>每周</li>
+            <li>全部</li>
+        </ul>
+    </div>
+
+    <div>
+        <div id="con0" class="styleli">
+            <ul>
+                <li style="border-top:1px solid #000">
+                    <span>解密：关于地与人类的一千零一问</span>
+                    <div class="hide">
+                        <img src="images/JS1.png" alt="">
+                        <span style="margin-left:92px;">解密：关于地球与人类的一千零一问</span>
+                    </div>
+                </li>
+                <li>
+                    <span>经典传奇：探索全世界重大历史事件</span>
+                    <div class="hide"><img src="images/JS2.png" alt="">
+                        <span style="margin-left:86px;">经典传奇：探索全世界重大历史事件</span>
+                    </div>
+                </li>
+                <li>
+                    <span>眼界：展现普通人的曲折命运和动人</span>
+                    <div class="hide"><img src="images/JS3.png" alt="">
+                        <span style="margin-left:86px;">经典传奇：探索全世界重大历史事件</span>
+                    </div>
+                </li>
+                <li>
+                    <span>档案（BTV）：惊人事件和传奇背后</span>
+                    <div class="hide"><img src="images/JS4.png" alt="">
+                        <span style="margin-left:86px;">经典传奇：探索全世界重大历史事件</span>
+                    </div>
+                </li>
+                <li>
+                    <span>世界十罪：30个震惊世界的TOP</span>
+                    <div class="hide"><img src="images/JS5.png" alt="">
+                        <span style="margin-left:86px;">经典传奇：探索全世界重大历史事件</span>
+                    </div>
+                </li>
+                <li>
+                    <span>身边的毛泽东：警卫员解密毛泽东秘密</span>
+                    <div class="hide"><img src="images/JS6.png" alt="">
+                        <span style="margin-left:86px;">经典传奇：探索全世界重大历史事件</span>
+                    </div>
+                </li>
+                <li>
+                    <span>新电影传奇：每一部电影都有自己的</span>
+                    <div class="hide"><img src="images/JS7.png" alt=""></div>
+                </li>
+                <li>
+                    <span>档案（上视纪实频道）：解密档案中</span>
+                    <div class="hide"><img src="images/JS8.png" alt=""></div>
+                </li>
+                <li>
+                    <span>探寻传世国宝的千古传奇</span>
+                    <div class="hide"><img src="images/JS9.png" alt=""></div>
+                </li>
+                <li>
+                    <span>纪实系列：讲诉社会百态，透视事实</span>
+                    <div class="hide"><img src="images/JS10.png" alt=""></div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="con1" class="hide">
+            <h1>哈喽！你好吗？</h1>
+        </div>
+
+        <div id="con2" class="hide">
+            <h1>嗨~ 我很好！</h1>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    $("#con0 li").each(function (index, item) {
+        $(item).on("mouseenter", function () {
+            $(item).addClass('lishow');
+            $(item).children('span').addClass('hide');
+            $(item).children('div').removeClass('hide');
+        })
+
+        $(item).on("mouseleave", function () {
+            $(item).removeClass('lishow');
+            $(item).children('span').removeClass('hide');
+            $(item).children('div').addClass('hide');
+        })
+    })
+
+    $("#menu li").each(function (index, item) {
+        $(item).on("mouseenter", function () {
+            $("#con" + index).removeClass('hide');
+            $("#con" + index).prev().addClass('hide');
+            $("#con" + index).next().addClass('hide');
+
+            $(item).removeClass('grey');
+            $(item).prev().addClass('grey');
+            $(item).next().addClass('grey');
+            console.log(item);
+
+        })
+    })
+</script>
+</html>
