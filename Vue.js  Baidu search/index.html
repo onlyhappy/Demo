@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue百度搜索下拉列表</title>
+    <!-- Vue.js实现百度搜索下拉列表，搜索关键字，显示对应关键字列表，选择上下键选择列表内容，点击回车确定并进入选中内容，实现百度搜索基本功能 -->
+    <style>
+        .gray {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="txt" @keyup="get($event)" @keydown.down="changeDown()" @keydown.up.prevent="changeUp()">
+    <ul>
+        <li v-for="value in todos" :class="{gray:$index==now}">
+            {{value}}
+        </li>
+    </ul>
+    <p v-show="todos.length==0">暂无数据...</p>
+</div>
+<script src="vue.js"></script>
+<script src="vue-resource.js"></script>
+<script>
+        new Vue({
+            el: '#box',
+            data: {
+                todos: [],
+                txt: '',
+                now: -1
+            },
+            methods: {
+                get: function (ev) {
+                    if (ev.keyCode == 38 || ev.keyCode == 40)return;
+
+                    if (ev.keyCode == 13) {
+                        window.open('https://www.baidu.com/s?wd=' + this.txt);
+                        this.txt = '';
+                    }
+
+                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', {
+                        wd: this.txt
+                    }, {
+                        jsonp: 'cb'
+                    }).then(function (res) {
+                        this.todos = res.data.s;
+                    }, function () {
+
+                    });
+                },
+                changeDown: function () {
+                    this.now++;
+                    if (this.now == this.todos.length)this.now = -1;
+                    this.txt = this.todos[this.now];
+                },
+                changeUp: function () {
+                    this.now--;
+                    if (this.now == -2)this.now = this.todos.length - 1;
+                    this.txt = this.todos[this.now];
+                }
+            }
+        });
+</script>
+</body>
+</html>
