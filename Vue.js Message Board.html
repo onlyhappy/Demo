@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>简单留言板</title>
+    <!-- Vue 实现简单留言板，点击添加数据，删除数据，实现基础添加、删除功能 -->
+    <style>
+        table {
+            width: 500px;
+            height: 500px;
+            border-collapse: collapse;
+            border: 1px solid red;
+        }
+
+        table tr {
+            width: 100%;
+            display: block;
+        }
+
+        table tr th {
+            width: 125px;
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+
+        table tr td {
+            width: 125px;
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg"/><br/>
+    <span>用户名</span><input type="text" v-model="userName"/><br/>
+    <span>密码</span><input type="text" v-model="userAge"/><br/>
+    <button @click='tian()'>添加</button>
+    <button @click='quan()'>全部删除</button>
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>名字</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for='item in todos'>
+            <td>{{$index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>
+                <button @click='shan()'>删除</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            todos: [
+                {
+                    id: '1', name: 'abc', age: 18
+                }
+            ],
+            msg: '简单留言板',
+            userName: 'abc',
+            userAge: 18,
+            newIndex: -100
+        },
+        methods: {
+            tian: function () {
+                this.todos.push({
+                    name: this.userName,
+                    age: this.userAge
+                })
+                this.userName = '',
+                        this.userAge = ''
+            },
+            shan: function (n) {
+                this.todos.splice(n, 1)
+            },
+            quan: function (n) {
+                this.todos = [];
+            }
+        }
+    })
+</script>
+</body>
+</html>

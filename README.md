@@ -53,4 +53,5 @@
 ### Aug 12,2017 [The shield effect](https://github.com/onlyhappy/Demo/blob/master/The%20shield%20effect/index.html)
 ### Aug 13,2017 [Scaled list](https://github.com/onlyhappy/Demo/blob/master/Scaled%20list/index.html)
 ### Aug 14,2017 [3D Cutting graph](https://github.com/onlyhappy/Demo/blob/master/3D%20Cutting%20graph/index.html)
-### Aug 15,2017 Vue.js Baidu search 
+### Aug 15,2017 [Vue.js Baidu search](https://github.com/onlyhappy/Demo/blob/master/Vue.js%20%20Baidu%20search/index.html)
+### Aug 15,2017 Vue.js Message Board
