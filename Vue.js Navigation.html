@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Vue导航切换</title>
+    <!-- Vue.js实现导航切换，点击导航切换对应内容 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            width: 500px;
+            height: 50px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        #nav {
+            line-height: 50px;
+            background: greenyellow;
+            box-shadow: 0 2px 2px pink;
+            border-radius: 2px;
+        }
+
+        #nav a {
+            display: inline-block;
+            padding: 16px 30px;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            line-height: 1;
+            transition: background-color 0.25s;
+            cursor: pointer;
+        }
+
+        b {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 50px auto;
+            background-color: #ccc;
+            border-radius: 2px;
+            font-size: 20px;
+        }
+
+        .show {
+            background-color: #e35885;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="nav">
+        <a v-for="item in items" :class="{'show': item.active}" @click="makeActive(item, $index)">{{item.name}}</a>
+    </div>
+    <p>hello <b>{{active}}</b></p>
+</div>
+<script src="http://cdn.jsdelivr.net/vue/1.0.21/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#main',
+        data: {
+            active: 'HTML',
+            items: [
+                {name: 'HTML', active: true},
+                {name: 'CSS', active: false},
+                {name: 'JavaScript', active: false},
+                {name: 'Vue.js', active: false}
+            ]
+        },
+        methods: {
+            makeActive: function (item, index) {
+                this.active = item.name;
+                for (var i = 0; i < this.items.length; i++) {
+                    this.items[i].active = false;
+                }
+                this.items[index].active = true;
+            }
+        }
+    });
+</script>
+</body>
+</html>
