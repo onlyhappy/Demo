@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>上下运动</title>
+    <!-- 点击按钮，实现小方块上下跳动 -->
+    <style>
+        .sqare {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: #9966ee;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<script src="myTool.js"></script>
+<script>
+    var timer = null;
+    var time = null;
+
+    for (var i = 0; i < 20; i++) {
+        var oDiv = document.createElement("div");
+        oDiv.classList.add('sqare');
+        document.body.append(oDiv);
+        oDiv.style.left = 80 + 60 * i + 'px';
+    }
+
+    var aDiv = $('div');
+    var onOff = true;
+
+    document.onclick = function () {
+        if (onOff) {
+            onOff = false;
+            for (var i = 0; i < aDiv.length; i++) {
+                fn(i, 500);
+            }
+        } else {
+            onOff = true;
+            for (var i = 0; i < aDiv.length; i++) {
+                fn(i, 50);
+            }
+        }
+    }
+
+    function fn(m, target) {
+        setInterval(function () {
+            move(aDiv[m], "top", 20, target);
+        }, 100 * m);
+    }
+</script>
+</body>
+</html>

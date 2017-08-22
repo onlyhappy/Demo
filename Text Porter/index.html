@@ -1,0 +1,170 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charse输入t="UTF-8" />
+	<title>文字搬运工</title>
+	<!-- 输入文字，点击搬运，动态输入到另一个盒子 -->
+	<style>
+		#con{
+			width:840px;
+			height:280px;
+			border:1px #ccc solid;
+			background: rgb(192,192,192);
+			margin: 50px auto;
+		}
+		#box{
+			width: 820px;
+			height: 260px;
+			margin: 10px;
+			border: 5px #eee solid;
+			background: #fff;
+		}
+		#left,#right{
+			width: 310px;
+			height: 230px;
+			border: 1px dashed #333;
+			margin: 10px;
+		}
+		#left{
+			float: left;
+		}
+		#right{
+			width: 290px;
+			height: 210px;
+			float: right;
+			background: aqua;
+			padding: 10px;
+		}
+		#left textarea{
+			background:rgb(239,239,143) ;
+		}
+		textarea{
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+			font-size: 16px;
+		}
+		#tip{
+			width: 130px;
+			float: left;
+			text-align: center;
+			height: 100%;
+		}
+		#tip button {
+			text-align: center;
+			background: orange;
+			width: 100px;
+			height: 35px;
+			font: 14px/35px "微软雅黑";
+			color: #fff;
+			margin: 10px auto;
+			border: 0;
+			cursor: pointer;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			margin-left: 15px;
+			margin-top: 20px;
+		}
+		ul  li{
+			list-style: none;
+			width: 10px;
+			height: 10px;
+			background: orange;
+			float: left;
+			margin-right: 5px;
+		}
+		.style{
+			background: red;
+		}
+		.orange{
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="con">
+		<div id="box">
+			<div id="left">
+				<textarea></textarea>
+			</div>
+			<div id="tip">
+				<button>文字右移</button><br>
+				<span><span id="span1">0</span>/<span id="span2">0</span></span>
+				<div id="animate">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<div id="right">
+			</div>
+		</div>
+	</div>
+	<script src="myTool.js"></script>
+	<script>
+		var oBtn = $('button')[0];
+		var leftTextArea = $('textarea',$('#left'))[0];
+		var rText = $('#right');
+		var oSpan1 = $("#span1");
+		var oSpan2 = $("#span2");
+		var oLi = $('li',$('ul')[0]);
+		var t;
+		leftTextArea.focus();
+		oBtn.onclick = function (){
+			//  左边文本域的值
+			var oTxt = leftTextArea.value;
+			//  右边DIV的文本
+			var oTxtR = "";
+			//   左边文本域的字符串 转换成数组
+			var tArr = [];
+			tArr = oTxt.split("");
+
+			if(oTxt.length == 0){
+				return alert("请输入内容");
+			}
+			//  完成度显示
+			oSpan2.innerHTML = tArr.length;
+			var t = setInterval(function(){
+				oTxtR += tArr.shift();
+				leftTextArea.value = tArr.join("");
+				rText.innerHTML = oTxtR;
+				oSpan1.innerHTML = rText.innerHTML.length;
+				color();
+				if(tArr.length == 0){
+					clearColor();
+					clear();
+
+				}
+			}, 1000);
+			function clear(){
+				clearInterval(t);
+			}
+		}
+		var n = 0;
+		function color(){
+			for(var i = 0 ; i < oLi.length ; i++){
+				oLi[i].style.background = "orange";
+			}
+			if(n > 6){
+				n = 0;
+			}
+			oLi[n].style.background = "aqua";
+			n++;
+		}
+		function clearColor(){
+			for(var i = 0 ; i < oLi.length ; i++){
+				oLi[i].style.background = "orange";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反选按钮</title>
+    <!-- js简单实现基础添加，删除，选择，反选，清空小功能 -->
+    <style>
+        .box{
+            width: 400px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+        .btnbox,.btnbox1{
+            padding: 20px;
+        }
+        td{
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+        .selBgc{
+            background: #ee6699;
+        }
+
+        .yg{
+            background: yellowgreen;
+        }
+
+        .gy{
+            background: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box" class="box">
+        <div id="btnbox" class="btnbox">
+            <input type="checkbox">
+            <button>全选</button>
+            <button>反选</button>
+            <button>清空</button>
+        </div>
+        <table id="tab" cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                    <td><input type="checkbox" /></td>
+                    <td><span>周杰伦</span></td>
+                </tr><tr>
+                    <td><input type="checkbox" /></td>
+                    <td><span>告白气球</span></td>
+                </tr><tr>
+                    <td><input type="checkbox" /></td>
+                    <td><span>稻香</span></td>
+                </tr><tr>
+                    <td><input type="checkbox" /></td>
+                    <td><span>青花瓷</span></td>
+                </tr><tr>
+                    <td><input type="checkbox" /></td>
+                    <td><span>晴天</span></td>
+                </tr><tr>
+                    <td><input type="checkbox" /></td>
+                    <td><span>安静</span></td>
+                </tr></tbody>
+        </table>
+
+        <div id="btnbox1" class="btnbox1">
+            <button>添加</button>
+            <button>删除</button>
+        </div>
+    </div>
+</body>
+<script src="js/myTool.js"></script>
+<script>
+    var oBtn = $("button");
+    var oInp = $("input",$("#tab"));
+    var oInpSel = $("input",$("#btnbox"))[0];
+    var oTab = $("#tab");
+    console.log(oBtn[2]);
+    blockBgc();
+    //   全选按钮功能实现
+    oBtn[0].onclick = function (){
+        for(var i = 0;i < oInp.length; i++){
+            oInp[i].checked = true;
+            oInpSel.checked = true;
+        }
+        selColor();
+    }
+
+    //反选按钮功能实现
+    oBtn[1].onclick = function () {
+        for(var i = 0;i < oInp.length; i++){
+            oInp[i].checked = !oInp[i].checked;
+        }
+        isChecked();
+        selColor();
+    }
+
+    //  清空按钮功能实现
+    oBtn[2].onclick = function () {
+        for(var i = 0;i < oInp.length; i++){
+            oInp[i].checked = false;
+            oInpSel.checked = false;
+            selColor();
+        }
+    }
+
+    //  添加按钮功能实现
+    oBtn[3].onclick = function () {
+        addElems();
+        fn();
+    };
+
+    //  删除按钮功能实现
+    oBtn[4].onclick = function () {
+        delElem();
+        blockBgc();
+    }
+
+    //  重新遍历一次添加后的元素节点
+    function fn() {
+        oInp = $("input",$("#tab"));
+        //  复选框的点击事件
+        for(var i = 0;i < oInp.length;i++){
+            oInp[i].onclick = function () {
+                isChecked();
+                selColor();
+            }
+        }
+    }
+   fn();
+
+    //  判断全选框是否要选中
+    function ifAllChecked() {
+        for(var i=0; i<oInp.length; i++) {
+            oInp[i].onclick = isChecked;
+        }
+    }
+
+    //     判断复选框的选中状态
+    function isChecked() {
+        var onOff = true;
+        for (var j = 0; j < oInp.length; j++) {
+            if (oInp[j].checked == false) {
+                onOff = false;
+                break;
+            }
+        }
+        //console.log(onOff);
+        if (onOff) {
+            oInpSel.checked = true;
+        } else {
+            oInpSel.checked = false;
+        }
+        selColor();
+    }
+    //  添加元素
+    function addElems() {
+        var tr = document.createElement("tr");
+        var tdC = document.createElement("td");
+        var tdS = document.createElement("td");
+        tdC.innerHTML = '<input type="checkbox" />';
+        tdS.innerHTML = '<span>告白气球</span>';
+        $("tbody",oTab)[0].appendChild(tr);
+        tr.appendChild(tdC);
+        tr.appendChild(tdS);
+        isChecked();
+    }
+
+    //  删除元素
+    function delElem(){
+       var tr = $("tbody",oTab)[0].childNodes;
+
+       tr[0].parentNode.removeChild(tr[tr.length-1]);
+       console.log(tr);
+   }
+
+    //  选中状态下的背景颜色
+    function selColor(){
+        for(var i = 0; i < oInp.length; i++){
+            console.log(oInp[i].checked);
+            if(oInp[i].checked){
+                oInp[i].parentNode.parentNode.style.backgroundColor = "#ee6699";
+            }else{
+                oInp[i].parentNode.parentNode.style.backgroundColor = "";
+                blockBgc();
+            }
+        }
+    }
+    //  空白状态下的背景颜色
+    function blockBgc(){
+        for(var i= 0 ;i < oInp.length;i++){
+            if(i % 2 == 0){
+                console.log(oInp[i]);
+                oInp[i].parentNode.parentNode.classList.add("yg");
+            }
+            else {
+                oInp[i].parentNode.parentNode.classList.add("gy");
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>随机验证</title>
+    <!-- 模仿登录验证码信息效果，点击切换验证码-->
+<body>
+<div id="box">
+    <input type="text" id="yanzheng">
+    <input type="button" id="btn" value="验证">
+</div>
+<script>
+    var oText = document.getElementById("yanzheng");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        panDuan();
+    }
+    //      获取验证码
+    function getYanZheng() {
+        var str = "";
+        for (var i = 0; i < 4; i++) {
+            var num = Math.round(Math.random() * 122);
+            while (!(num >= 48 && num <= 57 || num >= 65 && num <= 90 || num >= 97 && num <= 122)) {
+                num = Math.round(Math.random() * 122);
+            }
+            str += String.fromCharCode(num);
+        }
+        return str;
+    }
+    //   判断验证码是否重复之后进行回调操作
+    function panDuan() {
+        var str = getYanZheng();
+        var obj = {};
+        var arr = [];
+        for (var i = 0; i < str.length; i++) {
+            var item = str.charAt(i);
+            if (!obj[item]) {
+                arr.push(item);
+                obj[item] = true;
+            } else {
+                return panDuan();
+            }
+        }
+        oText.value = arr.join("");
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
