@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>v字图形变化</title>
+    <!-- 防v字图形，点击按钮变换v型图形 -->
+    <style>
+        div {
+            text-align: center;
+            line-height: 300%;
+        }
+
+        .box {
+            position: absolute;
+            left: 300px;
+            top: 100px;
+        }
+
+        .red {
+            width: 50px;
+            height: 50px;
+            background-color: #ff6699;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="开始" id="start">
+</div>
+<div id="box" class="box"></div>
+</body>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>
+    var sum = 0;
+    function getDraw() {
+        var str = "";
+        var j = 0, i;
+        var left, top1;
+
+        for (i = 0; i < 5; i++) {
+            if (i >= 3) {
+                j--;
+                console.log(j);
+            } else {
+                j++;
+                console.log(j);
+            }
+
+            if (sum % 4 == 0) {
+                left = (i % 5) * 50;
+                top1 = j * 50;
+            } else if (sum % 4 == 1) {
+                left = (j - 1) * 50;
+                top1 = ((i % 5) + 1) * 50;
+            } else if (sum % 4 == 2) {
+                left = (i % 5) * 50;
+                top1 = 300 - j * 50;
+            } else {
+                left = 200 - (j - 1) * 50;
+                top1 = ((i % 5) + 1) * 50;
+            }
+
+            str += '<div style="position:absolute; top:' + top1 + 'px; left:' + left + 'px;" class="red">' + (i + 1) + '</div>';
+        }
+
+        $("#box").html(str);
+        sum++;
+    }
+
+    $("#start").on("click", function () {
+        getDraw();
+    })
+</script>
+</html>
