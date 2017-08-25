@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时关闭广告</title>
+    <!-- 点击广告按钮，定时关闭广告特效，给用户更好的体验 -->
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h2>定时关闭的广告</h2>
+
+<div id='nav'>
+    点击我，5秒后关闭广告
+</div>
+<script>
+    var nav=document.getElementById("nav");
+    function fn(e) {
+        var time = 5000,
+                timeID = -1;
+        timeID = setInterval(function () {
+            if (time == 0) {
+                e.style.display = "none";
+                clearInterval(timeID);
+            }
+            time -= 1000;
+            e.innerHTML = (time / 1000) + "秒后关闭背投广告";
+        }, 1000)
+    }
+    nav.onclick = function () {
+        fn(nav);
+    }
+</script>
+</body>
+</html>
