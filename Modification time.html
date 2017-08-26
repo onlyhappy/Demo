@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示最后修改的时间</title>
+    <!-- 显示最后修改时间小功能，失去焦点时，显示修改时间 -->
+</head>
+<body>
+<h2>显示最后修改时间</h2>
+失去焦点时间，会修改文本：<input type="text" id='ipt'/><br/>
+
+<p id='getTime'>显示最后修改时间：</p>
+<script>
+    var ipt = document.getElementById("ipt");
+    var getTime = document.getElementById("getTime");
+
+    function getFn() {
+        var date = new Date();
+        return date.getFullYear() + "年"
+                + (date.getMonth() + 1) + "月"
+                + date.getDate() + "日"
+                + " "
+                + date.getHours() + "时"
+                + date.getMinutes() + "分"
+                + date.getSeconds() + "秒";
+    }
+    //显示最后修改时间
+    ipt.onblur = function () {
+        getTime.innerHTML = "显示最后修改时间：" + getFn();
+    }
+</script>
+</body>
+</html>
