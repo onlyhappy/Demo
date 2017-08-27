@@ -60,4 +60,5 @@
 ### Aug 23,2017 [Anti QQ list](https://github.com/onlyhappy/Demo/blob/master/Anti%20QQ%20list.html)  |   [V word graphic change](https://github.com/onlyhappy/Demo/blob/master/V%20word%20graphic%20change.html)
 ### Aug 24,2017 [Baidu score](https://github.com/onlyhappy/Demo/blob/master/Baidu%20score/index.html)
 ### Aug 25,2017 [Close ad](https://github.com/onlyhappy/Demo/blob/master/Close%20ad.html)
-### Aug 26,2017 Modification time
+### Aug 26,2017 [Modification time](https://github.com/onlyhappy/Demo/blob/master/Modification%20time.html)
+### Aug 27,2017 Animation effects

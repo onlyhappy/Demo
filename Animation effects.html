@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画效果</title>
+    <!-- jquery动画方法，通过小案例观察动画的一些执行情况，或者动画进行中的某一时刻进行的一些其他处理 -->
+    <style>
+        p {
+            color: red;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            color: red;
+        }
+
+        a {
+            display: block
+        }
+    </style>
+</head>
+<body>
+<div id="box">动画盒子</div>
+点击观看动画效果：
+<select id="animation">
+    <option value="1">动画step1动画</option>
+    <option value="2">动画stop2回调</option>
+</select>
+<a></a>
+<input id="an" type="button" value="执行动画">
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script>
+    $("#an").click(function () {
+        var v = $("#animation").val();
+        var $box = $("#box");
+
+        if (v == "1") {
+            $box.animate({
+                height: '50'
+            }, {
+                duration: 2000,
+                step: function (now, item) {
+                    $box.text('高度的改变值:' + now)
+                }
+            })
+        } else if (v == "2") {
+            $box.animate({
+                height: '50'
+            }, {
+                duration: 2000,
+                progress: function (now, item) {//progress 每一次动画调用的时候会执行这个回调，就是一个进度的概念
+                    $box.text('进度:' + arguments[1])
+                }
+            })
+        }
+    });
+</script>
+</body>
+</html>
