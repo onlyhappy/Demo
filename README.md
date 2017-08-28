@@ -61,4 +61,5 @@
 ### Aug 24,2017 [Baidu score](https://github.com/onlyhappy/Demo/blob/master/Baidu%20score/index.html)
 ### Aug 25,2017 [Close ad](https://github.com/onlyhappy/Demo/blob/master/Close%20ad.html)
 ### Aug 26,2017 [Modification time](https://github.com/onlyhappy/Demo/blob/master/Modification%20time.html)
-### Aug 27,2017 Animation effects
+### Aug 27,2017 [Animation effects](https://github.com/onlyhappy/Demo/blob/master/Animation%20effects.html)
+### Aug 28,2017 Ajax Intelligent dialogue
