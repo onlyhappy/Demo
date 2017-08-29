@@ -62,4 +62,5 @@
 ### Aug 25,2017 [Close ad](https://github.com/onlyhappy/Demo/blob/master/Close%20ad.html)
 ### Aug 26,2017 [Modification time](https://github.com/onlyhappy/Demo/blob/master/Modification%20time.html)
 ### Aug 27,2017 [Animation effects](https://github.com/onlyhappy/Demo/blob/master/Animation%20effects.html)
-### Aug 28,2017 Ajax Intelligent dialogue
+### Aug 28,2017 [Ajax Intelligent dialogue](https://github.com/onlyhappy/Demo/blob/master/Ajax%20Intelligent%20dialogue/chat.html)
+### Aug 29,2017 View source code

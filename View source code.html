@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看网页源代码</title>
+    <!-- 参考书籍，通过ajax动态创建新窗口，添加数据，实现一个查看网页源代码效果，扩展了自己的知识面-->
+</head>
+<body>
+<h2>查看网页源代码</h2>
+<input id='btn' type="button" value="查看网页源代码"/>
+<script>
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function () {
+        /**
+         *  window.open() 弹出新窗口的命令
+         *  '' 名字（非文件名）
+         *  menubar，scrollbars 表示菜单栏和滚动栏
+         *  location=no 是否显示地址栏
+         *  resizable=yes 是否允许改变窗口大小，yes为允许；
+         *  yes 是 no 否
+         * */
+        var source = window.open("index.html", "", "menubar=no,location=no,scrollbars=yes,resizable=yes");
+ 　  　
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();//主流浏览器
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");//IE浏览器
+        }
+
+        xhr.addEventListener('readystatechange', function () {
+            if (xhr.readyState == 4) {//请求数据成功，把数据添加到新窗口
+                source.document.write("<textarea cols='100' rows='100'>" + xhr.responseText + "</textarea>");
+            }
+        })
+
+        xhr.open("get", "index.html");
+        xhr.send(null);
+    }
+</script>
+</body>
+</html>
