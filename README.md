@@ -65,4 +65,5 @@
 ### Aug 28,2017 [Ajax Intelligent dialogue](https://github.com/onlyhappy/Demo/blob/master/Ajax%20Intelligent%20dialogue/chat.html)
 ### Aug 29,2017 [View source code](https://github.com/onlyhappy/Demo/blob/master/View%20source%20code.html)
 ### Aug 30,2017 [Vue Animation hide case](https://github.com/onlyhappy/Demo/blob/master/Vue%20Animation%20hide%20case.html)
-### Aug 31,2017 Registration information
+### Aug 31,2017 [Registration information](https://github.com/onlyhappy/Demo/blob/master/Regular%20text%20extraction.html)
+### September 1,2017 Cascade flow
