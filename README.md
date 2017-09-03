@@ -66,4 +66,6 @@
 ### Aug 29,2017 [View source code](https://github.com/onlyhappy/Demo/blob/master/View%20source%20code.html)
 ### Aug 30,2017 [Vue Animation hide case](https://github.com/onlyhappy/Demo/blob/master/Vue%20Animation%20hide%20case.html)
 ### Aug 31,2017 [Registration information](https://github.com/onlyhappy/Demo/blob/master/Regular%20text%20extraction.html)
-### September 1,2017 Cascade flow
+### September 1,2017 [Cascade flow](https://github.com/onlyhappy/Demo/tree/master/Cascade%20flow)
+### September 2,2017 Auto scroll
+### September 3,2017

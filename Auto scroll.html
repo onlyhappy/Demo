@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自动滚动效果</title>
+    <!-- 利用window.scrollBy实现上下来回滚动效果 -->
+</head>
+<body onload="fn()">
+hello<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>屏幕自动滚动哦<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>不错的效果吧<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>拜拜<br>
+<script>
+    var scrollY = 0;
+    var maxY = 700;
+    var direction = 0
+    function fn() {
+        if (direction == 0) {
+            window.scrollBy(0, +1);
+            if (scrollY > maxY) {
+                direction = 1
+            } else {
+                scrollY = scrollY + 1;
+            }
+        } else {
+            window.scrollBy(0, -1);
+            if (scrollY == 0)
+                direction = 0
+            else
+                scrollY = scrollY - 1;
+        }
+        setTimeout("fn()", 10);
+    }
+</script>
+</body>
+</html>
