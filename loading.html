@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading</title>
+    <!-- 实现网页加载，页面等待提示效果 -->
+    <style>
+        a{
+            text-decoration: none;
+        }
+        #loading{
+            background: red;
+            color:yellow;
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+<a href="http://www.ithappy.cn">ithappy | IT技术分享</a>
+<hr>
+<script language="javascript">
+    window.onload = function () {
+        var a = document.getElementById("loading");
+        a.parentNode.removeChild(a);
+    }
+    document.write('<div id="loading">正在为您读取内容，请稍候……</div>');
+</script>
+<!-- 现实的内容 -->
+<iframe src="http://www.ithappy.cn" width="100%" height="100%" frameborder="0" marginwidth="0"
+        marginheight="0"></iframe>
+</body>
+</html>
