@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <!-- vue 使用animate.css实现简单动画 -->
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="animate.css/animate.css">
+    <style>
+        #box{
+            width:400px;
+            margin: 0 auto;
+        }
+        #div1{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮" @click="toggle">
+    <div id="div1" class="animated" v-show="show" transition="bounce"></div>
+</div>
+
+<script>
+    new Vue({
+        el:'#box',
+        data:{
+            show:true
+        },
+        methods:{
+            toggle:function(){
+        this.show=!this.show;
+    }
+    },
+    transitions:{ //定义所有动画名称
+        bounce:{
+            enterClass:'zoomInLeft',
+             leaveClass:'zoomOutRight'
+        }
+    }
+    });
+</script>
+</body>
+</html>
