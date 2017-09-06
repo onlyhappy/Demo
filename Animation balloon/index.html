@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画小球</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<script src="main.js"></script>
+<script>
+    function ball() {
+        this.ballList = []
+        this.init()
+    }
+
+    ball.prototype.init = function () {
+        var self = this
+        document.onmousemove = function (e) {
+            self.makeBall(e)
+        }
+    }
+
+    // 开启定时器，执行主循环中的代码chan
+    ball.prototype.run = function () {
+        var self = this
+        window.setInterval(function () {
+            self.mainloop()
+        }, 1000 / 50)
+    }
+
+    // 游戏主循环代码
+    ball.prototype.mainloop = function () {
+        this.ballList.forEach(function (ball) {
+            ball.move()
+            if (ball) {
+                ball.render()
+            }
+        })
+    }
+
+    ball.prototype.makeBall = function (e) {
+        this.ballList.push(new Ball({
+            x: e.clientX,
+            y: e.clientY,
+            ball: this,
+            r: Math.random() * 30 + 20,
+            color: 'rgb(' + Math.ceil(Math.random() * 255) + ',' + Math.ceil(Math.random() * 255) + ',' + Math.ceil(Math.random() * 255) + ')'
+        }))
+    }
+
+    new ball().run()
+</script>
+</body>
+</html>

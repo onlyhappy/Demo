@@ -69,5 +69,6 @@
 ### September 1,2017 [Cascade flow](https://github.com/onlyhappy/Demo/tree/master/Cascade%20flow)
 ### September 2,2017 [Auto scroll](https://github.com/onlyhappy/Demo/blob/master/Auto%20scroll.html)
 ### September 3,2017 [loading](https://github.com/onlyhappy/Demo/blob/master/loading.html)
-### September 4,2017 animate
-### September 5,2017 
+### September 4,2017 [animate](https://github.com/onlyhappy/Demo/blob/master/animation/index.html)
+### September 5,2017 Automatic tab column
+### September 6,2017 Animation balloon
