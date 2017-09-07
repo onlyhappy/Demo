@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模拟抽奖</title>
+    <!-- 模拟抽奖效果，点击按钮随机抽奖,点击暂停关闭抽奖-->
+</head>
+<body>
+模拟抽奖：<input type="text" id="txt" name="txt" value="">
+<button onclick="start()">开始</button>
+<button onclick="ok()">停止</button>
+</body>
+<script>
+    var name = "zz,xx,cc,vv,bb,nn,mm,aa,ss,dd,ff,gg,hh,jj,kk,ll,qq,ww,ee,rr,tt,yy,uu,ii,oo,pp";
+    var names = name.split(',');
+    var num = names.length - 1;
+    var timer = null;
+    function change() {
+        document.getElementById('txt').value = names[fn(0, num)];
+    }
+
+    function start() {
+        clearInterval(timer);
+        timer = setInterval('change()', 50);
+    }
+
+    function ok() {
+        clearInterval(timer);
+    }
+
+    function fn(min, max) {
+        return parseInt(Math.random() * (max - min + 1));
+    }
+</script>
+</body>
+</html>
