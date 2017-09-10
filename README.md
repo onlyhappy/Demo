@@ -72,5 +72,6 @@
 ### September 4,2017 [animate](https://github.com/onlyhappy/Demo/blob/master/animation/index.html)
 ### September 5,2017 [Automatic tab column](https://github.com/onlyhappy/Demo/blob/master/Automatic%20tab%20column/index.html)
 ### September 6,2017 [Animation balloon](https://github.com/onlyhappy/Demo/blob/master/Animation%20balloon/index.html)
-### September 7,2017 [Simulated lottery]()
-### September 8,2017 game-snake
+### September 7,2017 [Simulated lottery](https://github.com/onlyhappy/Demo/blob/master/Simulated%20lottery.html)
+### September 8,2017 [game-snake](https://github.com/onlyhappy/Demo/tree/master/game-snake)
+### September 9,2017 router-animation
