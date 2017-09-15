@@ -1,9 +1,13 @@
-body{
-  overflow:hidden;
-}
 .scene {
   width: 800px;
   height: 600px;
   position: relative;
   border: 1px solid #000;
+}
+
+.bullet {
+  width: 5px;
+  height: 11px;
+  position: absolute;
+  background-image: url('../img/bullet1.png');
 }

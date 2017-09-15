@@ -1,9 +1,10 @@
-;
+
 (function () {
   var element = null
   var scene = document.querySelector('.scene')
 
-  function Hero() {
+  function Hero(options) {
+    this.game = options.game
     this.element = element = document.createElement('div')
     this.width = 51
     this.height = 63
@@ -11,7 +12,7 @@
     this.frames = [
         './img/hero1.png',
         './img/hero2.png'
-      ],
+      ]
       this.directions = []
 
     this.init()
@@ -20,7 +21,7 @@
   var methods = Hero.prototype
 
   /**
-   * 将飞机渲染到游戏场景中
+   * 将飞机初始化渲染到游戏场景中
    */
   methods.init = function () {
     element.style.width = this.width + 'px'
@@ -37,10 +38,12 @@
   methods.setDirections = function (e) {
     switch (e.type) {
       case 'keydown':
+        // 按下的时候，根据上下左右去记录到 directions 中
         switch (e.keyCode) {
           case 37:
             var index = this.directions.indexOf('ArrowRight')
             index !== -1 && this.directions.splice(index, 1)
+
             this.directions.indexOf(e.key) === -1 && this.directions.push(e.key)
             break
           case 38:
@@ -66,6 +69,8 @@
         }
         break
       case 'keyup':
+        // 当按键抬起的时候，从 directions 中找到
+        // this.directions.
         console.log('你按了 ' + e.key + '抬起来的')
         var index = this.directions.indexOf(e.key)
         index !== -1 && this.directions.splice(index, 1)
@@ -105,19 +110,19 @@
     if (this.directions.length === 2) {
       var directions = this.directions
       if (directions.indexOf('ArrowLeft') !== -1 && directions.indexOf('ArrowUp') !== -1) {
-  
+
         element.style.left = element.offsetLeft - this.speed + 'px'
         element.style.top = element.offsetTop - this.speed + 'px'
       } else if (directions.indexOf('ArrowLeft') !== -1 && directions.indexOf('ArrowDown') !== -1) {
-      
+
         element.style.left = element.offsetLeft - this.speed + 'px'
         element.style.top = element.offsetTop + this.speed + 'px'
       } else if (directions.indexOf('ArrowRight') !== -1 && directions.indexOf('ArrowUp') !== -1) {
-        
+
         element.style.left = element.offsetLeft + this.speed + 'px'
         element.style.top = element.offsetTop - this.speed + 'px'
       } else if (directions.indexOf('ArrowRight') !== -1 && directions.indexOf('ArrowDown') !== -1) {
-      
+
         element.style.left = element.offsetLeft + this.speed + 'px'
         element.style.top = element.offsetTop + this.speed + 'px'
       }
@@ -127,8 +132,14 @@
   /**
    * 发射子弹
    */
-  methods.shoot = function () {
+  methods.shoot = function (e) {
+    if (e.keyCode !== 32) {
+      return
+    }
 
+    this.game.bulletList.push(new Bullet({
+      game: this.game
+    }))
   }
 
   /**
@@ -144,6 +155,7 @@
   methods.checkEnemy = function () {
 
   }
+
 
   window.Hero = Hero
 })()
