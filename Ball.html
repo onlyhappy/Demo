@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas绘制炫彩小球小球</title>
+    <!-- canvas绘制炫彩小球，移动实现多色小球效果 -->
+    <style>
+        canvas {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600"></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext("2d");
+    var arr = [];
+    function Ball(x, y) {
+        this.x = x;
+        this.y = y;
+        this.r = Math.PI * 15 + 10;
+        this.color = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+        this.directionX = Math.random() * 10 - 5;
+        this.directionY = Math.random() * 10 - 5;
+    }
+    ;
+    Ball.prototype.update = function () {
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.r -= 2;
+    };
+    Ball.prototype.gender = function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, Math.PI * 2, 0);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    };
+    canvas.onmousemove = function (e) {
+        arr.push(new Ball(e.clientX, e.clientY));
+    }
+    window.setInterval(function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].update();
+            if (arr[i].r <= 0) {
+                arr.splice(i, 1);
+                i--;
+                continue;
+            }
+            arr[i].gender();
+        }
+    }, 1000 / 50)
+</script>
+</body>
+</html>
