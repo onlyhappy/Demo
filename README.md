@@ -8,6 +8,6 @@
  
 源代码地址：👉[GitHub](https://github.com/onlyhappy/Demo)
     
-个人网站：🔗[onlyhappy-IT技术分享](https://ithappy.cn) 
+个人网站：🔗[onlyhappy-IT技术分享](http://www.ithappy.cn/) 
 	
 GitHub：🔗[onlyhappy](https://github.com/onlyhappy) 

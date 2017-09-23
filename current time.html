@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery获取当前日期和时间</title>
+</head>
+<body>
+<p class="date">
+    <strong id="year"></strong>
+    <strong id="month"></strong>
+    <strong id="day"></strong>
+    <strong id="week"></strong>
+    <strong id="hour"></strong>
+    <strong id="week"></strong>
+    <strong id="second"></strong>
+</p>
+<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setInterval(showTime, 1000);
+            function timer(obj, txt) {
+                obj.text(txt);
+            }
+            function showTime() {
+                var today = new Date();
+                var weekday = new Array(7)
+                weekday[0] = "星期一"
+                weekday[1] = "星期二"
+                weekday[2] = "星期三"
+                weekday[3] = "星期四"
+                weekday[4] = "星期五"
+                weekday[5] = "星期六"
+                weekday[6] = "星期日"
+                var y = today.getFullYear() + "年";
+                var month = today.getMonth() + 1 + "月";
+                var day = today.getDate() + "日";
+                var week = weekday[today.getDay()];
+                var hour = today.getHours();
+                var branch = today.getMinutes();
+                var second = today.getSeconds();
+                timer($("#year"), y);
+                timer($("#month"), month);
+                timer($("#day"), day);
+                timer($("#week"), week);
+                timer($("#hour"), hour + ":");
+                timer($("#branch"), branch+ ":");
+                timer($("#second"), second);
+            }
+        })
+    </script>
+
+</body>
+</html>
