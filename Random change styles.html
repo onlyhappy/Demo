@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机更改css样式</title>
+</head>
+<body>
+    <a href="http://www.zzjs.net/"> It's my personal website, and has different kinds of IT skills to learn.Welcome to visit my personal website! </a>
+    <br>
+    <div id="main"></div>
+    <script>
+    var text = new Array("日照香炉生紫烟", "遥看瀑布挂前川", "飞流直下三千尺", "疑是银河落九天");
+    var color = new Array("red", "blue", "green", "yellow", "orange", "pink");
+    for (var i = 0; i < text.length; i++) {
+        var content = document.getElementById("main");
+        content.innerHTML += "<span style='color:" + color[parseInt(Math.random() * color.length + 1)] + "'>" + text[i] + "</span> ";
+    }
+    </script>
+</body>
+</html>
