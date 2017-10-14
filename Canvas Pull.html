@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas 拉线</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="600" style="background: red;"></canvas>
+    <script>
+        var myCanvas=document.getElementById("myCanvas");
+        var cxt=myCanvas.getContext("2d");
+        cxt.beginPath();
+        cxt.lineWidth=2;
+        cxt.moveTo(10,10);
+        cxt.quadraticCurveTo(100,100,200,10);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.beginPath();
+        cxt.moveTo(0,100);
+        cxt.bezierCurveTo(150,200,300,50,400,100);
+        cxt.stroke();
+        cxt.closePath();
+    </script>
+</body>
+</html>
