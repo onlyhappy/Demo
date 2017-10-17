@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建标签，弹出对应序号</title>
+</head>
+<body>
+  <script>
+    // 错误的写法,点击运行，从i=0,到i=9很快就执行完了，当点击的时候a的时候i早就成10了，输出都是10，所以这是错误的。
+    // for (i = 0; i < 10; i ++) {
+    //   	a = document.createElement('a')
+    //   	a.innerHTML = i + '<br/>'
+    //   	a.addEventListener('click', function (e) {
+    //   		e.preventDefault()
+    //   		alert(i)
+    //   	})
+    //   	document.body.appendChild(a)
+    // }
+    
+    // 正确的写法，i=0到i=9,函数存储了i的值，相当于声明了10个函数，alert的时候往上找找，找到对应值
+    for (i = 0; i < 10; i ++) {
+      (function (i) {
+      	a = document.createElement('a')
+      	a.innerHTML = i + '<br/>'
+      	a.addEventListener('click', function (e) {
+      		e.preventDefault()
+      		alert(i)
+      	})
+      	document.body.appendChild(a)
+      })(i)
+    }
+  </script>
+</body>
+</html>
