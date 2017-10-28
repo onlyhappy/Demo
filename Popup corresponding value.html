@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击每个Li，输出每个li的值</title>
+</head>
+<body>
+	<ul id='test'>
+	  <li>维尼</li>
+	  <li>小虫</li>
+      <li>调调虎</li>
+	</ul>
+	<script>
+      window.onload = function () {
+      	var sub = document.getElementById('test').getElementsByTagName('li');
+      	for (var i = 0;i<sub.length;i++) {
+          sub[i].onclick = function () {
+          	alert(this.innerHTML);
+          }
+      	}
+      }
+	</script>
+</body>
+</html>
