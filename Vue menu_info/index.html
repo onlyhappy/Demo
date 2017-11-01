@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全选/反选/多选/关闭菜单</title>
+  <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        .box{
+          width: 500px;
+          margin: 100px auto;
+        }
+        .box ul {
+            padding: 0;
+            margin:0;
+            list-style: none;
+        }
+
+        .box>ul>li {
+            margin-bottom: 20px;
+        }
+
+        .box>ul>li>h3 {
+            background: yellow;
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            line-height: 26px;
+        }
+        .box>ul>li>ul>li {
+            padding-left:28px;
+            overflow: hidden;
+            width: 100%;
+            font-size: 14px;
+            color: #999;
+            line-height: 20px;
+            min-height: 20px;
+            text-decoration: underline;
+            cursor:pointer;
+            margin:5px 0;
+        }
+        .box>ul>li>ul>li {
+            word-wrap: break-word;
+        }
+
+        .box li h3{
+            cursor:pointer;
+            position:relative;
+        }
+        .box li h3 span{
+            float:right;
+            line-height:26px;
+            margin-right:5px;
+        }
+        .box li li:hover{
+            color:red;
+        }
+
+        .box li ul{
+            overflow:hidden;
+        }
+       
+        .box li li{
+            position: relative;
+        }
+
+        .box li h3 b, .box li li b {
+            position: absolute;
+            top: 1px;
+            left: 5px;
+            vertical-align: middle;
+            width: 18px;
+            height: 18px;
+            background: url(./blue.png);
+            border: none;
+            cursor: pointer;
+            background-position: 0 0;
+            margin-right: 5px;
+        }
+        .box li h3 b {
+            position: absolute;
+            top: 4px;
+        }
+
+        .box li h3 b:hover, .box li li b:hover {
+            background-position: -20px 0;
+        }
+
+        .box li h3 b.checked, .box li li b.checked {
+            background-position: -40px 0;
+        }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="row">
+       <div class="box">
+           <ul>
+               <li id="" v-for="(entity,index) in entities" @click="handleTit(index)">
+                   <h3>{{entity.text}}<b  :class="{'checked':allState[index]}" @click.stop="handleTitAll(entity,index)"></b></h3>
+                   <ul v-show="open[index]" @click.stop>
+                       <li v-for="(list,listIndex) in entity.child" @click="childHandle(listIndex,index)">
+                           <b :class="{'checked':selected[index][listIndex]}"></b><span>{{list.text}}</span>
+                       </li>
+                   </ul>
+               </li>
+           </ul>
+
+       </div>
+       </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+  <script>
+    var newlist = new Vue({
+      el:'#app',
+      data:{
+        entities:[
+          {text:'人员',child:[{text:'第一组01'},{text:'第一组02'},{text:'第一组03'},{text:'第一组04'},{text:'第一组05'}]},
+          {text:'项目',child:[{text:'第二组01'},{text:'第二组02'}]},
+          {text:'机构',child:[{text:'第三组01'},{text:'第三组02'},{text:'第三组03'},{text:'第三组04'}]},
+        ],
+        open:[],//展开关闭
+        selected:[],//选中
+        allState:[],//全选
+        listLen:0
+        },
+      methods:{
+        handleTit(i){//点击父级
+           let state=this.open;
+           this.$set(state,i,!state[i]);
+           for(let a in this.open){
+               if(a!=i){
+                   this.$set(state,a,false);
+               }
+           }
+        },
+        childHandle(i,pi){//单选
+
+           let child=this.selected;
+           if(child[pi][i]) this.allState[pi]=false;
+           this.$set(child[pi],i,!child[pi][i]);
+           if(this.selected[pi][i]) this.checkList(this.selected[pi],pi);
+        },
+        handleTitAll(item,pi){//全选
+          this.listLen=item.child.length;
+           let child=this.selected[pi],
+               allState=this.allState;
+           for(let i=0;i<this.listLen;i++){
+              this.$set(child,i,!allState[pi]);
+           }
+           this.$set(allState,pi,!allState[pi]);
+        },
+        checkList(child,pi){
+           let allState=this.allState,
+               len=this.entities[pi].child.length;
+           for(let i=0;i<len;i++){
+              if(!child[i]) return;
+           }
+           this.$set(allState,pi,true);
+        }
+     },
+     created(){
+        let len=this.entities.length;
+        this.listLen=len;
+        for(let i=0;i<len;i++){
+           this.$set(this.selected,i,[])
+        }
+     }
+    })
+  </script>
+
+</body>
+</html>
