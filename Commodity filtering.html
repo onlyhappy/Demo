@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="UTF-8"/>
+    <title>angularjs过滤器</title>
+</head>
+<body>
+<h5>Supermarket search</h5>
+<div ng-controller="myController">
+    <input type="text" ng-model="test"/>
+    <p ng-repeat="item in items|filter:test|orderBy:name" >
+        {{item.number+'--'+item.name}}
+    </p>
+</div>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+        var app = angular.module('myapp', []);
+        app.controller('myController', function ($scope) {
+          $scope.items = [
+            {"number": 1,"name":"clothes"},
+            {"number": 2,"name":"An electric appliance"},
+            {"number": 3,"name":"food"},
+            {"number": 4,"name":"Wine"},
+            {"number": 5,"name":"shoes"},
+            {"number": 6,"name":"Underwear"},
+            {"number": 7,"name":"Children's clothing"},
+            {"number": 8,"name":"furniture"},
+            {"number": 9,"name":"Articles for daily use"},
+            {"number": 10,"name":"Fruits"}
+          ];
+        })
+</script>
+</body>
+</html>
