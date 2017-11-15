@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8" />
+        <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    </head>
+    <body ng-app="copyApp">
+        <div ng-controller="CopyController">
+            <form>
+                姓名: <input type="text" ng-model="user.name" /><br />
+                年龄：<input type="number" ng-model="user.age" /><br />
+                邮箱: <input type="email" ng-model="user.email" /><br />
+                性别：<input type="radio" ng-model="user.gender" value="male" /> 男
+                <input type="radio" ng-model="user.gender" value="female" /> 女
+                <br />
+                <button ng-click="reset()">重置</button>
+                <button ng-click="update(user)">保存（拷贝）</button>
+            </form>
+            <pre>form = {{user | json}}</pre>
+            <pre>master = {{master | json}}</pre>
+        </div>
+        <script>
+            angular.module('copyApp', [])
+                .controller('CopyController', ['$scope', function($scope) {
+                    $scope.master = {};
+                    $scope.update = function(user) {
+                        $scope.master = angular.copy(user);
+                        console.log($scope.master);//object
+                    };
+                    $scope.reset = function() {
+                        angular.copy($scope.user, $scope.master);
+                        console.log($scope.master);//Object {}
+                        console.log($scope.user);//undefined
+                    };
+                    $scope.reset();
+                }]);
+        </script>
+    </body>
+</html>
