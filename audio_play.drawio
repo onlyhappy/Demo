@@ -1,101 +1,101 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.9.1">
   <diagram name="第 1 页" id="ta58vHe-GmDzUkSBEKzQ">
-    <mxGraphModel dx="1214" dy="3506" grid="1" gridSize="11" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+    <mxGraphModel dx="850" dy="3155" grid="1" gridSize="11" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-1452" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-23" value="获取&lt;span style=&quot;font-size: 14px; text-align: left; white-space: pre-wrap; background-color: rgb(251, 251, 251);&quot;&gt;standardInfo&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XZLTzyuDEAE5YP5i8VYK-20">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-23" value="获取&lt;span style=&quot;font-size: 14px; text-align: left; white-space: pre-wrap; background-color: rgb(251, 251, 251);&quot;&gt;standardInfo&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="XZLTzyuDEAE5YP5i8VYK-20" vertex="1" connectable="0">
           <mxGeometry x="-0.2" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-1" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;点击播放&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-1" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;点击播放&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="176" y="-1540" width="132" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-19">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-19" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-1452" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-25" value="&lt;span style=&quot;font-size: 14px; text-align: left; white-space: pre-wrap; background-color: rgb(251, 251, 251);&quot;&gt;获取&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(251, 251, 251); font-size: 14px; text-align: left; white-space: pre-wrap;&quot;&gt;standardInfo&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XZLTzyuDEAE5YP5i8VYK-21">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-25" value="&lt;span style=&quot;font-size: 14px; text-align: left; white-space: pre-wrap; background-color: rgb(251, 251, 251);&quot;&gt;获取&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(251, 251, 251); font-size: 14px; text-align: left; white-space: pre-wrap;&quot;&gt;standardInfo&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="XZLTzyuDEAE5YP5i8VYK-21" vertex="1" connectable="0">
           <mxGeometry x="-0.2195" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-19">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-19" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1100" y="-1518" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-19" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;SSE 自动播放&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-19" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;SSE 自动播放&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="880" y="-1540" width="132" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-22">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-22" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-1353" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-22" target="XZLTzyuDEAE5YP5i8VYK-41">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-22" target="XZLTzyuDEAE5YP5i8VYK-41" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-22" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;standardInfo&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-22" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;standardInfo&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="528" y="-1452" width="132" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-27">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-27" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-1243" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-27" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;按钮显示当前&lt;span style=&quot;background-color: initial;&quot;&gt;播放状态&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-27" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;按钮显示当前&lt;span style=&quot;background-color: initial;&quot;&gt;播放状态&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="484" y="-1353" width="220" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-29">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-29" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-1155" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-29" value="拿取&lt;span style=&quot;font-size: 14px; text-align: left; white-space-collapse: preserve;&quot;&gt;standardInfo文本列表，调用ws与雪飞老师通信，返回二进制流&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-29" value="拿取&lt;span style=&quot;font-size: 14px; text-align: left; white-space-collapse: preserve;&quot;&gt;standardInfo文本列表，调用ws与雪飞老师通信，返回二进制流&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="440" y="-1243" width="308" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-31">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-31" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-1056" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-31" value=".pcm二进制数据转为.wav文件" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-31" value=".pcm二进制数据转为.wav文件" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="440" y="-1155" width="308" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-33">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-33" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="594" y="-968" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-33" value="顺序初始化preloadAudo预加载&lt;span style=&quot;background-color: initial;&quot;&gt;方法&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-33" value="顺序初始化preloadAudo预加载&lt;span style=&quot;background-color: initial;&quot;&gt;方法&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="440" y="-1056" width="308" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-37" value="播放音频" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-37" value="播放音频" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="440" y="-968" width="308" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XZLTzyuDEAE5YP5i8VYK-39">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XZLTzyuDEAE5YP5i8VYK-39" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="352" y="-759" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-39" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;暂停、打断音频&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-39" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;暂停、打断音频&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="132" y="-781" width="132" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-41" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;初始化store中的音频hooks（audioStore.initializeAudioPlayer&lt;/div&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;）&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-41" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;初始化store中的音频hooks（audioStore.initializeAudioPlayer&lt;/div&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;）&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="781" y="-1397" width="385" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-44" value="关闭音频audioStore.pause()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-44" value="关闭音频audioStore.pause()" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="352" y="-781" width="132" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="XZLTzyuDEAE5YP5i8VYK-47" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;watch检测list数据，获取数据，继续调用preloadAudio&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XZLTzyuDEAE5YP5i8VYK-47" value="&lt;article data-content=&quot;[{&amp;quot;type&amp;quot;:&amp;quot;block&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;Hbyp-1732607685483&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;paragraph&amp;quot;,&amp;quot;data&amp;quot;:{},&amp;quot;nodes&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;SaNG-1732607685481&amp;quot;,&amp;quot;leaves&amp;quot;:[{&amp;quot;text&amp;quot;:&amp;quot;standardInfo&amp;quot;,&amp;quot;marks&amp;quot;:[]}]}],&amp;quot;state&amp;quot;:{}}]&quot;&gt;&lt;div style=&quot;white-space-collapse: preserve; line-height: 1.75; font-size: 14px; text-align: left;&quot;&gt;watch检测list数据，获取数据，继续调用preloadAudio&lt;/div&gt;&lt;/article&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1100" y="-1540" width="275" height="44" as="geometry" />
         </mxCell>
       </root>
